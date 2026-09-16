@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+        Configuración para que la página se adapte correctamente
+        a celulares, tabletas y computadores.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción básica para buscadores -->
+    <meta
+        name="description"
+        content="Emariaje - Artesanía y diseño. Bolsos, accesorios y decoración hechos a mano desde Cascajal, Magangué."
+    >
+
+    <title>Emariaje | Artesanía & Diseño</title>
+
+    <!--
+        Fuentes utilizadas en la identidad visual:
+        - Cormorant Garamond: títulos elegantes.
+        - Montserrat: textos y elementos de navegación.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Iconos de Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >    
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER / BARRA DE NAVEGACIÓN
+         ========================================================= -->
+    <header class="header" id="inicio">
+        <div class="container header__content">
+
+            <!-- Logo de Emariaje -->
+            <a href="#inicio" class="logo" aria-label="Emariaje - Inicio">
+                <div class="logo__symbol">
+                    <span>R</span>
+                </div>
+
+                <div class="logo__text">
+                    <strong>EMARIAJE</strong>
+                    <small>ARTESANÍA & DISEÑO</small>
+                </div>
+            </a>
+
+            <!-- Botón para abrir/cerrar el menú en dispositivos móviles -->
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Menú principal -->
+            <nav class="nav" id="mainNav">
+                <a href="#inicio" class="nav__link active">Inicio</a>
+                <a href="#productos" class="nav__link">Productos</a>
+                <a href="#historia" class="nav__link">Nuestra historia</a>
+                <a href="#proceso" class="nav__link">Proceso</a>
+                <a href="#contacto" class="nav__link">Contacto</a>
+            </nav>
+
+            <!-- Botón principal de WhatsApp -->
+            <a
+                class="button button--whatsapp header__whatsapp"
+                href="https://wa.me/573001234567?text=Hola%20Emariaje,%20quiero%20conocer%20sus%20productos."
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-whatsapp"></i>
+                Comprar por WhatsApp
+            </a>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
+        <section class="hero">
+            <div class="container hero__content">
+
+                <div class="hero__text">
+                    <p class="eyebrow">BIENVENIDA A EMARIAJE</p>
+
+                    <h1>
+                        Hecho a mano,<br>
+                        hecho con <em>alma.</em>
+                    </h1>
+
+                    <p class="hero__description">
+                        Bolsos, accesorios y detalles para tu hogar
+                        creados artesanalmente desde Cascajal, Magangué.
+                    </p>
+
+                    <div class="hero__buttons">
+                        <a href="#productos" class="button button--primary">
+                            Descubrir productos
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a
+                            href="https://wa.me/573001234567?text=Hola%20Emariaje,%20quiero%20hablar%20con%20ustedes."
+                            class="button button--outline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Hablar por WhatsApp
+                        </a>
+                    </div>
+
+                    <p class="hero__signature">
+                        Artesanía que inspira tu día a día
+                    </p>
+                </div>
+
+                <!--
+                    Imagen principal.
+                    Reemplazar esta ruta por la fotografía definitiva
+                    del bolso utilizada en el diseño.
+                -->
+                <div class="hero__image">
+                    <img
+                        src="assets/img/hero-emariaje.jpg"
+                        alt="Bolso artesanal de Emariaje"
+                    >
+
+                    <div class="hero__phrase">
+                        <span>Detalles</span>
+                        que cuentan<br>
+                        <em>historias.</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             BENEFICIOS / PROPUESTA DE VALOR
+             ===================================================== -->
+        <section class="benefits">
+            <div class="container benefits__grid">
+
+                <article class="benefit">
+                    <div class="benefit__icon">
+                        <i class="fa-regular fa-hand"></i>
+                    </div>
+                    <div>
+                        <h3>Hecho a mano</h3>
+                        <p>Cada pieza es elaborada con dedicación.</p>
+                    </div>
+                </article>
+
+                <article class="benefit">
+                    <div class="benefit__icon">
+                        <i class="fa-regular fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h3>Piezas únicas</h3>
+                        <p>Diseños con personalidad y carácter propio.</p>
+                    </div>
+                </article>
+
+                <article class="benefit">
+                    <div class="benefit__icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div>
+                        <h3>Con identidad local</h3>
+                        <p>Desde Cascajal, Magangué para el mundo.</p>
+                    </div>
+                </article>
+
+                <article class="benefit">
+                    <div class="benefit__icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+                    <div>
+                        <h3>Compra fácil</h3>
+                        <p>Haz tu pedido directamente por WhatsApp.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             PRODUCTOS DESTACADOS
+             ===================================================== -->
+        <section class="section section--products" id="productos">
+            <div class="container">
+
+                <div class="section-heading section-heading--products">
+                    <div>
+                        <p class="eyebrow">NUESTRAS CREACIONES</p>
+                        <h2>Productos destacados</h2>
+                        <span class="heading-line"></span>
+                    </div>
+
+                    <a href="#productos" class="text-link">
+                        Ver todos los productos
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="products-grid">
+
+                    <!-- Producto 1 -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img
+                                src="assets/img/bolso-tradicion.jpg"
+                                alt="Bolso Tradición artesanal"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-card__body">
+                            <h3>Bolso Tradición</h3>
+                            <p>Elaborado con fibras naturales.</p>
+
+                            <div class="product-card__footer">
+                                <strong>$120.000</strong>
+
+                                <button
+                                    class="cart-button"
+                                    type="button"
+                                    aria-label="Agregar Bolso Tradición"
+                                    data-product="Bolso Tradición"
+                                >
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- Producto 2 -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img
+                                src="assets/img/individual-tejido.jpg"
+                                alt="Individual tejido artesanal"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-card__body">
+                            <h3>Individual Tejido</h3>
+                            <p>Ideal para darle un toque especial a tu mesa.</p>
+
+                            <div class="product-card__footer">
+                                <strong>$35.000</strong>
+
+                                <button
+                                    class="cart-button"
+                                    type="button"
+                                    aria-label="Agregar Individual Tejido"
+                                    data-product="Individual Tejido"
+                                >
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- Producto 3 -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img
+                                src="assets/img/aretes-naturaleza.jpg"
+                                alt="Aretes Naturaleza artesanales"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-card__body">
+                            <h3>Aretes Naturaleza</h3>
+                            <p>Accesorios que realzan tu estilo.</p>
+
+                            <div class="product-card__footer">
+                                <strong>$28.000</strong>
+
+                                <button
+                                    class="cart-button"
+                                    type="button"
+                                    aria-label="Agregar Aretes Naturaleza"
+                                    data-product="Aretes Naturaleza"
+                                >
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- Producto 4 -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img
+                                src="assets/img/caja-decorativa.jpg"
+                                alt="Caja decorativa artesanal"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-card__body">
+                            <h3>Caja Decorativa</h3>
+                            <p>Detalles que conectan con tu hogar.</p>
+
+                            <div class="product-card__footer">
+                                <strong>$65.000</strong>
+
+                                <button
+                                    class="cart-button"
+                                    type="button"
+                                    aria-label="Agregar Caja Decorativa"
+                                    data-product="Caja Decorativa"
+                                >
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             NUESTRA HISTORIA
+             ===================================================== -->
+        <section class="story" id="historia">
+            <div class="story__image">
+                <img
+                    src="assets/img/artesana-emariaje.jpg"
+                    alt="Artesana elaborando un producto de Emariaje"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="story__content">
+                <p class="eyebrow">NUESTRA HISTORIA</p>
+
+                <h2>Cada pieza tiene una historia.</h2>
+
+                <p>
+                    En Emariaje creemos que crear con las manos es una forma
+                    de expresar nuestra identidad. Cada bolso, accesorio y
+                    detalle para el hogar nace de un proceso artesanal
+                    realizado con dedicación en Cascajal, Magangué, donde
+                    la tradición y la creatividad se unen para dar vida
+                    a piezas únicas.
+                </p>
+
+                <a href="#contacto" class="button button--primary">
+                    Conoce más sobre nosotros
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <div class="story__decoration">
+                    Artesanía<br>
+                    que nace<br>
+                    <em>del corazón</em>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             PROCESO DE CREACIÓN
+             ===================================================== -->
+        <section class="section process" id="proceso">
+            <div class="container">
+
+                <div class="section-heading section-heading--center">
+                    <p class="eyebrow">NUESTRO PROCESO</p>
+                    <h2>De la idea a tus manos</h2>
+                    <span class="heading-line"></span>
+                </div>
+
+                <div class="process__grid">
+
+                    <article class="process-step">
+                        <div class="process-step__number">01</div>
+                        <div class="process-step__icon">
+                            <i class="fa-regular fa-lightbulb"></i>
+                        </div>
+                        <h3>Inspiración</h3>
+                        <p>Nace la idea.</p>
+                    </article>
+
+                    <div class="process__arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <article class="process-step">
+                        <div class="process-step__number">02</div>
+                        <div class="process-step__icon">
+                            <i class="fa-regular fa-leaf"></i>
+                        </div>
+                        <h3>Materiales</h3>
+                        <p>Seleccionamos las mejores fibras.</p>
+                    </article>
+
+                    <div class="process__arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <article class="process-step">
+                        <div class="process-step__number">03</div>
+                        <div class="process-step__icon">
+                            <i class="fa-regular fa-hand"></i>
+                        </div>
+                        <h3>Creación</h3>
+                        <p>Damos forma con dedicación.</p>
+                    </article>
+
+                    <div class="process__arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <article class="process-step">
+                        <div class="process-step__number">04</div>
+                        <div class="process-step__icon">
+                            <i class="fa-regular fa-sun"></i>
+                        </div>
+                        <h3>Detalles</h3>
+                        <p>Cuidamos cada acabado.</p>
+                    </article>
+
+                    <div class="process__arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <article class="process-step">
+                        <div class="process-step__number">05</div>
+                        <div class="process-step__icon">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <h3>Tu pieza</h3>
+                        <p>Lista para ser parte de tu historia.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             DESDE CASCAJAL
+             ===================================================== -->
+        <section class="origin">
+            <div class="origin__image">
+                <img
+                    src="assets/img/cascajal.jpg"
+                    alt="Paisaje de Cascajal, Magangué"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="origin__content">
+                <p class="eyebrow">NUESTRO ORIGEN</p>
+
+                <h2>Desde Cascajal para el mundo.</h2>
+
+                <p>
+                    Nuestro trabajo nace en Cascajal, un lugar lleno de
+                    historia, cultura y personas que mantienen viva la
+                    tradición artesanal. Llevamos en cada creación un
+                    pedacito de nuestra tierra, para que lo lleves contigo.
+                </p>
+
+                <a href="#contacto" class="button button--primary">
+                    Nuestra esencia
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <div class="origin__phrase">
+                    “Pequeñas manos<br>
+                    que hacen grandes<br>
+                    <em>historias”</em>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             TESTIMONIOS
+             ===================================================== -->
+        <section class="section testimonials">
+            <div class="container">
+
+                <div class="section-heading section-heading--center">
+                    <p class="eyebrow">TESTIMONIOS</p>
+                    <h2>Lo que dicen nuestras clientas</h2>
+                    <span class="heading-line"></span>
+                </div>
+
+                <div class="testimonials__grid">
+
+                    <article class="testimonial">
+                        <img
+                            src="assets/img/testimonio-laura.jpg"
+                            alt="Laura M."
+                            loading="lazy"
+                        >
+
+                        <div>
+                            <div class="stars">★★★★★</div>
+                            <p>“Me encantó mi bolso, se nota el trabajo y la calidad. ¡Gracias Emariaje!”</p>
+                            <strong>Laura M.</strong>
+                        </div>
+                    </article>
+
+                    <article class="testimonial">
+                        <img
+                            src="assets/img/testimonio-sandra.jpg"
+                            alt="Sandra P."
+                            loading="lazy"
+                        >
+
+                        <div>
+                            <div class="stars">★★★★★</div>
+                            <p>“Piezas únicas y hermosas. Ideal para regalar o decorar tu hogar.”</p>
+                            <strong>Sandra P.</strong>
+                        </div>
+                    </article>
+
+                    <article class="testimonial">
+                        <img
+                            src="assets/img/testimonio-camila.jpg"
+                            alt="Camila R."
+                            loading="lazy"
+                        >
+
+                        <div>
+                            <div class="stars">★★★★★</div>
+                            <p>“Llevo un pedacito de Cascajal conmigo. Simplemente hermoso.”</p>
+                            <strong>Camila R.</strong>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             LLAMADO A LA ACCIÓN
+             ===================================================== -->
+        <section class="cta" id="contacto">
+            <div class="container cta__content">
+
+                <div>
+                    <h2>¿Te gustó alguno de nuestros productos?</h2>
+                    <p>Escríbenos por WhatsApp y realiza tu pedido.</p>
+                </div>
+
+                <a
+                    href="https://wa.me/573001234567?text=Hola%20Emariaje,%20quiero%20realizar%20un%20pedido."
+                    class="button button--light"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Hablar por WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+    <footer class="footer">
+        <div class="container footer__grid">
+
+            <!-- Identidad de la marca -->
+            <div class="footer__brand">
+                <a href="#inicio" class="logo">
+                    <div class="logo__symbol">
+                        <span>R</span>
+                    </div>
+
+                    <div class="logo__text">
+                        <strong>EMARIAJE</strong>
+                        <small>ARTESANÍA & DISEÑO</small>
+                    </div>
+                </a>
+
+                <p>Artesanía que inspira vida.</p>
+            </div>
+
+
+            <!-- Enlaces -->
+            <div class="footer__links">
+                <h3>Explora</h3>
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#historia">Nuestra historia</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+
+            <!-- Redes sociales -->
+            <div class="footer__social">
+                <h3>Síguenos</h3>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="Pinterest">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Información de contacto -->
+            <div class="footer__contact">
+                <h3>Contacto</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Cascajal, Magangué
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +57 300 123 4567
+                </p>
+
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    emariaje@gmail.com
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Pie inferior -->
+        <div class="footer__bottom">
+            <div class="container">
+                <p>
+                    © <span id="currentYear"></span> Emariaje S.A.S.
+                    Todos los derechos reservados.
+                </p>
+
+                <p>Diseñado con ♥ para resaltar lo nuestro.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Botón flotante de WhatsApp -->
+    <a
+        class="whatsapp-float"
+        href="https://wa.me/573001234567?text=Hola%20Emariaje,%20quiero%20información."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar a Emariaje por WhatsApp"
+    >
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+    <!-- JavaScript principal de Emariaje -->
+    <script type="module" src="src/js/main.js"></script>
+
+</body>
+</html>
