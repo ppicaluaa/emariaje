@@ -48,7 +48,7 @@
             <a href="#inicio" class="logo" aria-label="EMARIAJE - Inicio">
             
                 <div class="logo__symbol">
-                    <img src="/images/brand/logo-emariaje.jpg" alt="Logo de EMARIAJE">
+                    <img src="/images/brand/logo-emariaje.png" alt="Logo de EMARIAJE">
                 </div>
             
                 <div class="logo__text">
@@ -133,23 +133,63 @@
                         Artesanía que inspira tu día a día
                     </p>
                 </div>
-
-                <!--
-                    Imagen principal.
-                    Reemplazar esta ruta por la fotografía definitiva
-                    del bolso utilizada en el diseño.
-                -->
+                                
                 <div class="hero__image">
-                    <img
-                        src="/images/products/mochilas/hero-emariaje.jpg"
-                        alt="Bolso artesanal de Emariaje"
-                    >
+                
+                    <!-- Imagen principal del producto -->
+                    <img src="/images/hero/hero-mochila-destacada.png" alt="Bolso artesanal de Emariaje">
+                
+                    <!-- =====================================================
+                        DECORACIÓN DE LA CURVA CENTRAL
+                        Líneas curvas, efecto Y y difuminado
+                        ===================================================== -->
+                    <div class="hero__curve-decoration" aria-hidden="true">
+                        <svg viewBox="0 0 300 460" preserveAspectRatio="none">
+                            <defs>
+                                <!-- Gradiente translúcido para la curva orgánica -->
+                                <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#f2e5dc" stop-opacity="1" />
+                                    <stop offset="70%" stop-color="#f2e5dc" stop-opacity="0.85" />
+                                    <stop offset="100%" stop-color="#f2e5dc" stop-opacity="0.3" />
+                                </linearGradient>
+                    
+                                <!-- Filtro para suavizar bordes si se requiere -->
+                                <filter id="softBlur" x="-10%" y="-10%" width="120%" height="120%">
+                                    <feGaussianBlur stdDeviation="4" />
+                                </filter>
+                            </defs>
+                    
+                            <!-- Relleno de la curva orgánica translúcida -->
+                            <path class="curve-shape" d="
+                                M -100,0 
+                                L 120,0 
+                                C 210,80 230,180 180,270 
+                                C 140,340 160,400 220,460 
+                                L 0,460 
+                                Z" fill="url(#curveGradient)" />
+                    
+                            <!-- Líneas orgánicas decorativas (Trazo) -->
+                            <path class="curve-line curve-line--ellipse" d="
+                                M 120,0 
+                                C 210,80 230,180 180,270 
+                                C 140,340 160,400 220,460" />
+                    
+                            <path class="curve-line curve-line--s" d="
+                                M 90,0 
+                                C 160,60 190,140 150,230 
+                                C 110,310 130,390 170,460" />
+                        </svg>
+                    </div>
 
+                    <!-- Velo de luz y transparencia sobre la fotografía -->
+                    <div class="hero__curve-glow" aria-hidden="true"></div>
+                
                     <div class="hero__phrase">
                         <span>Detalles</span>
                         que cuentan<br>
                         <em>historias.</em>
                     </div>
+                
                 </div>
             </div>
         </section>
