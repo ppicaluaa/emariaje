@@ -84,7 +84,7 @@ button {
 }
 
 .container {
-    width: min(92%, var(--container-width));
+    width: min(95%, var(--container-width));
     margin: 0 auto;
 }
 
@@ -195,6 +195,11 @@ h2 {
 
 /* Icono de WhatsApp en el botón del header */
 .header__whatsapp i {
+    font-size: 2.1em;
+}
+
+/* Icono de WhatsApp en el botón del Hero */
+.button--outline i {
     font-size: 2.1em;
 }
 
@@ -433,30 +438,6 @@ h2 {
     z-index: 2;
 }
 
-/* ============================================================
-   PROLONGACIÓN CURVA DEL FONDO CREMA
-   ============================================================ */
-
-.hero__text::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    right: -150px;
-
-    width: 150px;
-    height: 100%;
-
-    background-color: #f2e5dc;
-
-    z-index: 1;
-
-    pointer-events: none;
-        
-    /* Dibuja el corte exacto en forma de S */
-    clip-path: path("M 0,0 C 90,80 110,180 60,270 C 20,340 40,400 100,460 L 0,460 Z");
-}
 
 .hero h1 {
     color: var(--color-brown);
@@ -464,9 +445,38 @@ h2 {
     letter-spacing: -0.03em;
 }
 
+/* ============================================================
+   SEGUNDA LÍNEA DEL TITULAR
+   ============================================================ */
+
+.hero__headline-line {
+    display: block;
+
+    white-space: nowrap;
+}
+
+/* ============================================================
+   PALABRA "ALMA"
+   ============================================================ */
+
 .hero h1 em {
+    display: inline-block;
+
     color: var(--color-terracotta);
+
+    font-family: "Allura", cursive;
+
+    font-size: 1.2em;
     font-weight: 400;
+
+    letter-spacing: 1px;
+
+    /* Ajuste vertical de la escritura */
+    position: relative;
+    top: 0.04em;
+
+    /* Evita que el navegador la corte */
+    white-space: nowrap;
 }
 
 .hero__description {
@@ -486,9 +496,10 @@ h2 {
     margin-top: 22px;
 
     color: var(--color-brown);
-    font-family: var(--font-title);
-    font-size: 1rem;
+    font-family: "Allura", cursive;
+    font-size: 1.5rem;
     font-style: italic;
+    letter-spacing: 0.6px;
 }
 
 /* ============================================================
@@ -506,119 +517,6 @@ h2 {
     z-index: 1;
 }
 
-/* ============================================================
-   DETALLES DECORATIVOS DE LA CURVA
-   ============================================================ */
-
-.hero__curve-decoration {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 260px;
-    height: 100%;
-
-    z-index: 3;
-
-    pointer-events: none;
-
-    /* Difuminado muy suave alrededor de las líneas 
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));*/
-}
-
-.hero__curve-decoration svg {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    overflow: visible;
-}
-
-/* Forma rellena con translucidez */
-.curve-shape {
-    backdrop-filter: blur(4px); /* Efecto desโฟกัส / Glassmorphism sobre la imagen */
-}
-
-/* Líneas principales */
-.curve-line {
-    fill: none;
-
-    /* Tono inspirado en el marrón/terracota de EMARIAJE */
-    stroke: rgba(107, 70, 54, 0.45);
-
-    stroke-width: 1.2;
-
-    stroke-linecap: round;
-}
-
-.curve-line--ellipse {
-    opacity: 0.8;
-}
-
-.curve-line--s {
-    opacity: 0.5;
-}
-
-/* Línea principal que acompaña la curva */
-.curve-line--main {
-    opacity: 0.9;
-}
-
-/* Segunda línea que forma la "Y" */
-.curve-line--branch {
-    opacity: 0.65;
-}
-
-/* ============================================================
-   VELO DIFUMINADO DE LA CURVA
-   ============================================================ */
-
-.hero__curve-glow {
-    position: absolute;
-
-    left: -50px;
-    top: -10px;
-
-    width: 270px;
-    height: 480px;
-
-    background:
-        radial-gradient(
-            ellipse at 72% 50%,
-            rgba(250, 247, 240, 0.62) 0%,
-            rgba(250, 247, 240, 0.42) 32%,
-            rgba(250, 247, 240, 0.22) 52%,
-            rgba(250, 247, 240, 0.06) 70%,
-            rgba(250, 247, 240, 0) 82%
-        );
-
-    filter: blur(12px);
-
-    z-index: 3;
-
-    pointer-events: none;
-}
-
-.hero__curve-glow::after {
-    content: "";
-
-    position: absolute;
-
-    left: 55px;
-    bottom: -30px;
-
-    width: 180px;
-    height: 145px;
-
-    background: rgba(255, 255, 255, 0.30);
-
-    border-radius: 50%;
-
-    filter: blur(30px);
-}
-
 .hero__image img {
     width: 100%;
     height: 100%;
@@ -629,21 +527,86 @@ h2 {
     object-position: center;
     
     position: relative;
-    z-index: 0;
+    z-index: 1;
 }
+
+/* ============================================================
+   TRANSICIÓN EN "S" ENTRE EL TEXTO Y LA FOTO
+   ============================================================ */
+
+.hero__blend {
+    position: absolute;
+    top: 0;
+    left: 36%;
+    width: 22%;
+    height: 100%;
+
+    overflow: visible;   /* deja que el difuminado no se corte en la caja del svg */
+    pointer-events: none;
+    z-index: 1;          /* sobre la foto, bajo el texto (z-index: 2) */
+}
+
+/* Capa 1: crema sólido a la izquierda que se desvanece sobre la foto */
+.hero__blend--fade {
+    filter: blur(26px);  /* largo del desvanecimiento */
+}
+
+.hero__blend--fade path {
+    fill: #f2e5dc;
+    stroke: #f2e5dc;
+    stroke-width: 64px;  /* cuánto avanza el crema antes de empezar a desvanecerse */
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
+
+/* Capa 2: resplandor de luz sobre la foto, junto a la curva */
+.hero__blend--glow {
+    filter: blur(18px);
+    mix-blend-mode: screen;  /* suma luz en vez de solo tapar */
+    opacity: 0.85;
+}
+
+.hero__blend--glow path {
+    fill: none;
+    stroke: #fff6e8;
+    stroke-width: 46px;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+/* Capa 3: línea fina nítida en forma de S */
+.hero__blend--line path {
+    fill: none;
+    stroke: rgba(107, 70, 54, 0.45);
+    stroke-width: 1px;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+/* ============================================================
+   FRASE DECORATIVA DEL HERO
+   ============================================================ */
 
 .hero__phrase {
     position: absolute;
+
     right: 30px;
-    top: 70px;
+    top: 200px;
+
+    z-index: 5;
 
     color: var(--color-brown);
-    font-family: var(--font-title);
+
+    font-family: "Allura", cursive;
     font-size: 1.8rem;
     font-style: italic;
+    font-weight: 400;
+
     line-height: 1.05;
 
     text-align: center;
+
+    pointer-events: none;
 }
 
 .hero__phrase::after {
@@ -673,7 +636,7 @@ h2 {
 }
 
 .benefits__grid {
-    min-height: 105px;
+    min-height: 120px;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -688,10 +651,10 @@ h2 {
 }
 
 .benefit__icon {
-    flex: 0 0 52px;
+    flex: 0 0 70px;
 
-    width: 52px;
-    height: 52px;
+    width: 70px;
+    height: 70px;
 
     display: grid;
     place-items: center;
@@ -701,7 +664,7 @@ h2 {
     background-color: #efd9ce;
     color: var(--color-terracotta);
 
-    font-size: 1.25rem;
+    font-size: 2.1rem;
 }
 
 .benefit h3 {
@@ -722,7 +685,7 @@ h2 {
    ============================================================ */
 
 .section {
-    padding: 75px 0;
+    padding: 30px 0;
 }
 
 .section--products {
@@ -873,13 +836,40 @@ h2 {
 
 .story {
     display: grid;
-    grid-template-columns: 43% 57%;
+    grid-template-columns: 42% 38% 20%; /* imagen | contenido | panel decorativo */
+
+    position: relative; /* necesario para posicionar el divisor con % sobre toda la sección */
 
     background-color: #f4e7df;
 }
 
 .story__image {
-    min-height: 380px;
+    min-height: 350px;
+    position: relative;
+    z-index: 1;
+}
+
+.story__image::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100px;
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        rgba(244, 231, 223, 0) 0%,
+        rgba(244, 231, 223, 0.10) 35%,
+        rgba(244, 231, 223, 0.35) 65%,
+        rgba(244, 231, 223, 0.85) 100%
+    );
+
+    pointer-events: none;
+    z-index: 2;
 }
 
 .story__image img {
@@ -894,22 +884,25 @@ h2 {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 
-    padding: 60px 8%;
+    padding: 26px 3% 20px;
+
+    align-self: start;
 }
 
 .story__content h2 {
-    max-width: 650px;
+    max-width: 600px;
     margin-bottom: 18px;
 }
 
 .story__content > p:not(.eyebrow) {
-    max-width: 620px;
+    max-width: 500px;
 
     color: #514b47;
     font-size: 0.78rem;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .story__content .button {
@@ -917,26 +910,86 @@ h2 {
     margin-top: 20px;
 }
 
+/* ============================================================
+   PANEL DECORATIVO (fondo propio + divisor en "S")
+   ============================================================ */
+
+.story__panel {
+     position: relative;
+    overflow: hidden;
+}
+
+/* El divisor "muerde" el panel con el color de fondo de .story,
+   creando la curva en forma de S en el borde izquierdo */
+.story__divider {
+    position: absolute;
+    top: 0;
+    left: 75%;   /* en vez de 80% + width:40px + translateX(-50%) */
+    width: 25%;    /* llega hasta el borde derecho real de .story */
+    height: 100%;
+
+    overflow: visible; /* deja que el brillo se salga un poco del svg */
+    shape-rendering: geometricPrecision; /*reduce artefactos de redondeo en curvas */
+
+    z-index: 1;  /* debajo de .story__decoration (3) y .story__branch (2) */
+    pointer-events: none;
+}
+
+.story__divider-fade {
+    fill: url(#storyFade);
+    stroke: none;
+}
+
+.story__divider-solid {
+    fill: #fbf6f1;
+    stroke: none;
+}
+
+.story__divider-line {
+    fill: none;
+    stroke: var(--color-brown);
+    stroke-width: 0.1px;      /*reales en pantalla, no unidades del viewBox */
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
 .story__decoration {
     position: absolute;
-    right: 8%;
-    top: 50%;
 
-    color: var(--color-terracotta);
-    font-family: var(--font-title);
-    font-size: 1.8rem;
+    left: 36%;
+    top: 54%;
+
+    width: 170px;
+
+    color: var(--color-brown);
+    font-family: "Allura", cursive;
+    font-size: 2rem;
     font-style: italic;
-    line-height: 1;
 
+    line-height: 1.45;
+    letter-spacing: 0.6px;
     text-align: center;
 
-    transform: translateY(-20%);
+    transform: translate(-50%, -50%) rotate(-7deg);
+
+    z-index: 3;
 }
 
-.story__decoration em {
-    color: var(--color-brown);
-}
+.story__branch {
+    position: absolute;
 
+    right: -50px;
+    top: 8%;
+
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+
+    z-index: 2;
+    opacity: 0.72;
+
+    pointer-events: none;
+}
 
 /* ============================================================
    10. PROCESO
@@ -944,6 +997,29 @@ h2 {
 
 .process {
     background-color: var(--color-white);
+    position: relative;
+
+    overflow: hidden;
+
+     /* Reduce el espacio vertical de esta sección */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.process__leaves {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: auto;
+    left: 87%;
+    
+    object-fit: contain;
+
+    opacity: 0.8;
+
+    pointer-events: none;
+    z-index: 1;
 }
 
 .process__grid {
@@ -960,64 +1036,99 @@ h2 {
 }
 
 .process-step {
+    display: grid;
+
+    /* Número e ícono en la misma fila */
+    grid-template-columns: 40px 64px;
+
+    /* Espacio entre el número y el ícono */
+    column-gap: 20px;
+
+    /* Centra el conjunto */
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
 }
 
 .process-step__number {
-    display: inline-grid;
+    display: grid;
     place-items: center;
 
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
 
-    margin-bottom: 8px;
+    margin: 0;
 
     border-radius: 50%;
 
     background-color: #efd9ce;
     color: var(--color-terracotta);
 
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .process-step__icon {
-    width: 54px;
-    height: 54px;
+    width: 72px;
+    height: 72px;
 
     display: grid;
     place-items: center;
 
-    margin: 0 auto 10px;
+    margin: 0;
 
     border: 1px solid #e4cbc0;
     border-radius: 50%;
 
     color: var(--color-brown);
-    font-size: 1.2rem;
+    font-size: 2.2rem;
+}
+
+.icon-detalles {
+    width: 1.4em;
+    height: 1.4em;
+    display: block;
 }
 
 .process-step h3 {
+    /* El texto comienza en la columna del ícono */
+    grid-column: 2;
+
     color: var(--color-dark);
     font-size: 0.75rem;
     font-weight: 700;
+
+    /* Centrado respecto al círculo */
+    text-align: center;
+    justify-self: center;
 }
 
 .process-step p {
-    margin-top: 4px;
+    /* El texto comienza en la columna del ícono */
+    grid-column: 2;
+    width: 95px;
 
     color: #716a66;
     font-size: 0.62rem;
     line-height: 1.4;
+
+    /* Centrado respecto al círculo */
+    text-align: center;
+    justify-self: center;
 }
 
 .process__arrow {
-    padding-top: 60px;
+    padding-top: 22px;
 
     color: var(--color-terracotta);
     opacity: 0.7;
-}
 
+     /* Flecha un poco más larga */
+    font-size: 1.1rem;
+
+    transform: scaleX(1.35);
+}
 
 /* ============================================================
    11. ORIGEN / CASCAJAL
@@ -1025,19 +1136,59 @@ h2 {
 
 .origin {
     display: grid;
-    grid-template-columns: 43% 57%;
-
+    grid-template-columns: 40% 35% 25%;
+    position: relative;
+   
     background-color: #f4e7df;
 }
 
 .origin__image {
     min-height: 300px;
+
+    position: relative;
+
+    /* Permitimos que el difuminado sobresalga hacia el contenido
+    overflow: visible;*/
+
+    /* La transición queda por encima de la fotografía 
+    z-index: 2;*/
+}
+
+/* ============================================================
+   TRANSICIÓN DIFUMINADA / EFECTO NIEBLA
+   ENTRE LA IMAGEN Y EL CONTENIDO
+   ============================================================ */
+
+.origin__image::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 140px;
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        rgba(244, 231, 223, 0) 0%,
+        rgba(244, 231, 223, 0.15) 30%,
+        rgba(244, 231, 223, 0.5) 60%,
+        rgba(244, 231, 223, 0.9) 85%,
+        rgba(244, 231, 223, 1) 100%
+    );
+
+    pointer-events: none;
+    z-index: 1;
+
 }
 
 .origin__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .origin__content {
@@ -1048,7 +1199,8 @@ h2 {
     flex-direction: column;
     justify-content: center;
 
-    padding: 50px 8%;
+    padding: 10px 25px;
+    z-index: 1;
 }
 
 .origin__content h2 {
@@ -1069,25 +1221,86 @@ h2 {
 }
 
 .origin__phrase {
-    position: absolute;
-    right: 8%;
-    top: 50%;
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 6% 0 25%;
 
     color: var(--color-brown);
-    font-family: var(--font-title);
-    font-size: 1.7rem;
+    font-family: "Allura", cursive;
+    font-size: 2rem;
     font-style: italic;
-    line-height: 1;
+    line-height: 1.5;
+    letter-spacing: 0.6px;
 
-    text-align: center;
-
-    transform: translateY(-50%);
+    text-align: center;    
 }
 
-.origin__phrase em {
-    color: var(--color-terracotta);
+.origin__phrase-text {
+    display: block;
+    transform: rotate(-10deg); /* la inclinación ahora vive solo en el texto */
 }
 
+.origin__panel {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 300px;
+}
+
+.origin__divider {
+    position: absolute;
+    top: 0;
+    left: 74%;   /* 43% + 35% = límite entre .origin__content y .origin__panel */
+    width: 26%;
+    height: 100%;
+
+    overflow: visible;
+    shape-rendering: geometricPrecision;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.origin__divider-fade {
+    fill: url(#originFade);
+    stroke: none;
+}
+
+.origin__divider-solid {
+    fill: #fbf6f1;
+    stroke: none;
+}
+
+.origin__divider-line {
+    fill: none;
+    stroke: var(--color-brown);
+    stroke-width: 0.1px;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.origin__phrase::after {
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 2.51px;
+
+    margin-top: 10px;
+
+    background-color: var(--color-brown);
+}
 
 /* ============================================================
    12. TESTIMONIOS
@@ -1159,23 +1372,65 @@ h2 {
 
     background-color: #9a6861;
     color: var(--color-white);
+
+     clip-path: url(#ctaBrushEdge); /* bordes irregulares tipo pincel */
 }
 
-.cta::before {
-    content: "❧";
+.cta__backdrop {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0.175;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Capa gris: clara en los extremos, oscura en el centro */
+.cta::after {
+    content: "";
 
     position: absolute;
-    left: 35px;
-    top: -20px;
+    inset: 0;
 
-    color: rgba(255, 255, 255, 0.18);
-    font-family: var(--font-title);
-    font-size: 9rem;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(50, 40, 38, 0.45) 0%,
+        rgba(50, 40, 38, 0.15) 55%,
+        rgba(50, 40, 38, 0) 100%
+    );
 
-    transform: rotate(-25deg);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.cta__leaf {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cta__leaf--left {
+    left: -10px;
+}
+
+.cta__leaf--right {
+    right: -10px;
 }
 
 .cta__content {
+    position: relative; /* nuevo: necesario para el z-index */
+    z-index: 3;          /* por encima de las hojas y el overlay gris */
+
     min-height: 150px;
 
     display: flex;
@@ -1197,6 +1452,9 @@ h2 {
     font-size: 1.2rem;
 }
 
+.cta i {
+    font-size: 2.1rem;
+}
 
 /* ============================================================
    14. FOOTER
@@ -1209,19 +1467,18 @@ h2 {
 
 .footer__grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2.5fr 1fr 1.5fr 1.5fr 1.2fr;
     gap: 45px;
 
-    padding: 45px 0;
+    padding: 30px 0;
 }
 
 .footer__brand p {
     margin-top: 15px;
 
-    color: var(--color-terracotta);
-    font-family: var(--font-title);
-    font-size: 1.1rem;
-    font-style: italic;
+    /*color: var(--color-brown);*/
+    font-family: var(--font-body);
+    font-size: 1rem;
 }
 
 .footer h3 {
@@ -1239,8 +1496,8 @@ h2 {
 }
 
 .footer__links a {
-    color: #625c58;
-    font-size: 0.68rem;
+    color: var(--color-dark);
+    font-size: 0.8rem;
 }
 
 .footer__links a:hover {
@@ -1249,53 +1506,127 @@ h2 {
 
 .social-links {
     display: flex;
-    gap: 8px;
+    gap: 10px;
 }
 
 .social-links a {
-    width: 31px;
-    height: 31px;
+    width: 34px;
+    height: 34px;
 
     display: grid;
     place-items: center;
 
     border-radius: 50%;
 
-    background-color: #dfc8bc;
-    color: var(--color-brown);
+    color: var(--color-white);
+    font-size: 0.95rem;
 
     transition:
-        background-color var(--transition),
-        color var(--transition);
+        transform var(--transition),
+        filter var(--transition);
+}
+
+/* Color propio de cada red, en el orden del HTML */
+.social-links a:nth-child(1) {       /* Instagram */
+    background-color: #f0d5c8;
+    color: var(--color-brown);
+}
+
+.social-links a:nth-child(2) {       /* Facebook */
+    background-color: var(--color-terracotta);
+}
+
+.social-links a:nth-child(3) {       /* TikTok */
+    background-color: #111111;
+}
+
+.social-links a:nth-child(4) {       /* Pinterest */
+    background-color: var(--color-terracotta);
 }
 
 .social-links a:hover {
-    background-color: var(--color-brown);
-    color: var(--color-white);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* Línea divisoria suave, con aire arriba y abajo */
+.footer__social hr {
+    width: calc(4 * 34px + 3 * 10px); /* = 166px, el ancho exacto de los 4 íconos */
+    margin: 18px 0 14px;              /* margen izquierdo en 0 para alinearla con el primer ícono */
+
+    border: none;
+    border-top: 2px solid #e4cbc0;
+}
+
+/* Texto legal más pequeño */
+.footer__social p {
+    font-size: 0.85rem;
+    line-height: 1.7;
 }
 
 .footer__contact p {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 
-    margin-bottom: 8px;
+    margin: 12px 0;
 
-    color: #625c58;
-    font-size: 0.67rem;
+    color: var(--color-dark);
+    font-size: 0.8rem;
 }
 
 .footer__contact i {
     width: 15px;
     color: var(--color-terracotta);
+    font-size: 1.2rem;
+}
+
+.footer__phrase {
+    position: relative;
+    left: 25px;   /* mueve a la derecha */
+    top: -15px;   /* valor negativo = mueve hacia arriba */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--color-brown);
+    font-family: "Allura", cursive;
+    font-size: 2.2rem;
+    font-style: italic;
+    line-height: 1.4;
+    letter-spacing: 1.5px;
+
+    text-align: center;
+}
+
+.footer__phrase-text {
+    display: block;
+    transform: rotate(-9deg); /* la inclinación vive solo en el texto */
+}
+
+/* Raya horizontal recta debajo del texto */
+.footer__phrase::after {
+    content: "";
+
+    display: block;
+
+    width: 50px;
+    height: 1px;
+
+    margin-top: 10px;
+
+    background-color: var(--color-terracotta);
 }
 
 .footer__bottom {
-    border-top: 1px solid rgba(107, 70, 54, 0.12);
+    background: var(--color-beige);
+
 }
 
 .footer__bottom .container {
-    min-height: 50px;
+    min-height: 45px;
 
     display: flex;
     align-items: center;
@@ -1305,8 +1636,8 @@ h2 {
 }
 
 .footer__bottom p {
-    color: #776f6a;
-    font-size: 0.58rem;
+    color: var(--color-dark);
+    font-size: 0.6rem;    
 }
 
 

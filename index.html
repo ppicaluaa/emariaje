@@ -28,6 +28,10 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
+        rel="stylesheet"
+    >
 
     <!-- Iconos de Font Awesome -->
     <link
@@ -37,7 +41,7 @@
 </head>
 
 <body>
-
+    
     <!-- =========================================================
          HEADER / BARRA DE NAVEGACIÓN
          ========================================================= -->
@@ -48,11 +52,11 @@
             <a href="#inicio" class="logo" aria-label="EMARIAJE - Inicio">
             
                 <div class="logo__symbol">
-                    <img src="/images/brand/logo-emariaje.png" alt="Logo de EMARIAJE">
+                    <img src="/images/brand/logo-emariajes.png" alt="Logo de EMARIAJE">
                 </div>
             
                 <div class="logo__text">
-                    <strong>EMARIAJE</strong>
+                    <strong>EMARIAJES</strong>
                     <small>ARTESANÍA & DISEÑO</small>
                 </div>
             
@@ -104,7 +108,9 @@
 
                     <h1>
                         Hecho a mano,<br>
-                        hecho con <em>alma.</em>
+                        <span class="hero__headline-line">
+                            hecho con <em>alma.</em>
+                        </span>
                     </h1>
 
                     <p class="hero__description">
@@ -133,67 +139,37 @@
                         Artesanía que inspira tu día a día
                     </p>
                 </div>
-                                
+                                                
                 <div class="hero__image">
                 
                     <!-- Imagen principal del producto -->
                     <img src="/images/hero/hero-mochila-destacada.png" alt="Bolso artesanal de Emariaje">
-                
-                    <!-- =====================================================
-                        DECORACIÓN DE LA CURVA CENTRAL
-                        Líneas curvas, efecto Y y difuminado
-                        ===================================================== -->
-                    <div class="hero__curve-decoration" aria-hidden="true">
-                        <svg viewBox="0 0 300 460" preserveAspectRatio="none">
-                            <defs>
-                                <!-- Gradiente translúcido para la curva orgánica -->
-                                <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stop-color="#f2e5dc" stop-opacity="1" />
-                                    <stop offset="70%" stop-color="#f2e5dc" stop-opacity="0.85" />
-                                    <stop offset="100%" stop-color="#f2e5dc" stop-opacity="0.3" />
-                                </linearGradient>
                     
-                                <!-- Filtro para suavizar bordes si se requiere -->
-                                <filter id="softBlur" x="-10%" y="-10%" width="120%" height="120%">
-                                    <feGaussianBlur stdDeviation="4" />
-                                </filter>
-                            </defs>
-                    
-                            <!-- Relleno de la curva orgánica translúcida -->
-                            <path class="curve-shape" d="
-                                M -100,0 
-                                L 120,0 
-                                C 210,80 230,180 180,270 
-                                C 140,340 160,400 220,460 
-                                L 0,460 
-                                Z" fill="url(#curveGradient)" />
-                    
-                            <!-- Líneas orgánicas decorativas (Trazo) -->
-                            <path class="curve-line curve-line--ellipse" d="
-                                M 120,0 
-                                C 210,80 230,180 180,270 
-                                C 140,340 160,400 220,460" />
-                    
-                            <path class="curve-line curve-line--s" d="
-                                M 90,0 
-                                C 160,60 190,140 150,230 
-                                C 110,310 130,390 170,460" />
-                        </svg>
-                    </div>
-
-                    <!-- Velo de luz y transparencia sobre la fotografía -->
-                    <div class="hero__curve-glow" aria-hidden="true"></div>
-                
                     <div class="hero__phrase">
                         <span>Detalles</span>
                         que cuentan<br>
                         <em>historias.</em>
-                    </div>
+                    </div>                
+                </div>    
                 
-                </div>
+                <!-- Transición en S: fundido crema, resplandor y línea -->
+                <svg class="hero__blend hero__blend--fade" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M -100,-100 L 56,-100 L 56,0
+                             C 34,110 34,120 56,230
+                             C 78,340 78,350 56,460
+                             L 56,560 L -100,560 Z" />
+                </svg>
+                
+                <svg class="hero__blend hero__blend--glow" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M 56,0 C 34,110 34,120 56,230 C 78,340 78,350 56,460" />
+                </svg>
+                
+                <svg class="hero__blend hero__blend--line" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M 56,0 C 34,110 34,120 56,230 C 78,340 78,350 56,460" />
+                </svg>
+
             </div>
         </section>
-
 
         <!-- =====================================================
              BENEFICIOS / PROPUESTA DE VALOR
@@ -213,7 +189,7 @@
 
                 <article class="benefit">
                     <div class="benefit__icon">
-                        <i class="fa-regular fa-leaf"></i>
+                        <i class="fa-brands fa-pagelines"></i>
                     </div>
                     <div>
                         <h3>Piezas únicas</h3>
@@ -396,7 +372,7 @@
         <section class="story" id="historia">
             <div class="story__image">
                 <img
-                    src="assets/img/artesana-emariaje.jpg"
+                    src="images/history/artesana-historia.png"
                     alt="Artesana elaborando un producto de Emariaje"
                     loading="lazy"
                 >
@@ -419,14 +395,42 @@
                 <a href="#contacto" class="button button--primary">
                     Conoce más sobre nosotros
                     <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                </a>                            
+            </div>
 
+            <div class="story__panel">                           
                 <div class="story__decoration">
                     Artesanía<br>
                     que nace<br>
-                    <em>del corazón</em>
+                    del corazón
                 </div>
+                
+                <!-- Rama decorativa -->
+                <img 
+                    class="story__branch" 
+                    src="/images/history/rama-historia.png" 
+                    alt="rama decorativa" 
+                    aria-hidden="true"
+                >
             </div>
+
+            <svg class="story__divider" viewBox="0 0 100 800" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                    <linearGradient id="storyFade" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="30" y2="0">
+                        <stop offset="0%" stop-color="#fbf6f1" stop-opacity="0" />
+                        <stop offset="100%" stop-color="#fbf6f1" stop-opacity="1" />
+                    </linearGradient>
+                </defs>
+            
+                <!-- Franja angosta junto a la curva: aquí SÍ hay degradado -->
+                <path class="story__divider-fade" d="M19.4,0 C25.4,136 25.4,264 19.4,400 C13.4,536 13.4,664 19.4,800 L30,800 L30,0 Z" />
+            
+                <!-- Resto del panel: rectángulo sólido, sin degradado -->
+                <path class="story__divider-solid" d="M30,0 L100,0 L100,800 L30,800 Z" />
+            
+                <!-- Línea decorativa: igual que antes -->
+                <path class="story__divider-line" d="M20,0 C26,136 26,264 20,400 C14,536 14,664 20,800" />
+            </svg>
         </section>
 
 
@@ -460,7 +464,7 @@
                     <article class="process-step">
                         <div class="process-step__number">02</div>
                         <div class="process-step__icon">
-                            <i class="fa-regular fa-leaf"></i>
+                            <i class="fa-brands fa-pagelines"></i>
                         </div>
                         <h3>Materiales</h3>
                         <p>Seleccionamos las mejores fibras.</p>
@@ -486,7 +490,19 @@
                     <article class="process-step">
                         <div class="process-step__number">04</div>
                         <div class="process-step__icon">
-                            <i class="fa-regular fa-sun"></i>
+                            <svg class="icon-detalles" viewBox="0 0 40 40" aria-hidden="true">
+                                <g transform="translate(20,20)" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round">
+                                    <path transform="rotate(0)" d="M0,-16 C3,-11 3,-4 0,-1.5 C-3,-4 -3,-11 0,-16 Z" />
+                                    <path transform="rotate(90)" d="M0,-16 C3,-11 3,-4 0,-1.5 C-3,-4 -3,-11 0,-16 Z" />
+                                    <path transform="rotate(180)" d="M0,-16 C3,-11 3,-4 0,-1.5 C-3,-4 -3,-11 0,-16 Z" />
+                                    <path transform="rotate(270)" d="M0,-16 C3,-11 3,-4 0,-1.5 C-3,-4 -3,-11 0,-16 Z" />
+                                    <path transform="rotate(45) scale(0.5)" d="M0,-16 C3,-11 3,-4 0,-1.5 C-3,-4 -3,-11 0,-16 Z" />
+                                    <path transform="rotate(135) scale(0.5)" d="M0,-16 C3,-11 3,-4 0,-1.5 C-3,-4 -3,-11 0,-16 Z" />
+                                    <path transform="rotate(225) scale(0.5)" d="M0,-16 C3,-11 3,-4 0,-1.5 C-3,-4 -3,-11 0,-16 Z" />
+                                    <path transform="rotate(315) scale(0.5)" d="M0,-16 C3,-11 3,-4 0,-1.5 C-3,-4 -3,-11 0,-16 Z" />
+                                </g>
+                                <circle cx="20" cy="20" r="2" fill="currentColor" />
+                            </svg>
                         </div>
                         <h3>Detalles</h3>
                         <p>Cuidamos cada acabado.</p>
@@ -507,6 +523,9 @@
 
                 </div>
             </div>
+
+            <!-- Hoja decorativa de la sección -->
+            <img class="process__leaves" src="/images/process/hoja-proceso.png" alt="" aria-hidden="true">
         </section>
 
 
@@ -516,7 +535,7 @@
         <section class="origin">
             <div class="origin__image">
                 <img
-                    src="assets/img/cascajal.jpg"
+                    src="images/origin/paisaje-cascajal.png"
                     alt="Paisaje de Cascajal, Magangué"
                     loading="lazy"
                 >
@@ -537,14 +556,36 @@
                 <a href="#contacto" class="button button--primary">
                     Nuestra esencia
                     <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
+                </a>                
+            </div>  
+            
+            <!-- panel decorativo con fondo propio -->
+            <div class="origin__panel">
                 <div class="origin__phrase">
-                    “Pequeñas manos<br>
-                    que hacen grandes<br>
-                    <em>historias”</em>
+                    <span class="origin__phrase-text">
+                        “Pequeñas manos<br>
+                        que hacen grandes<br>
+                        historias”
+                    </span>
                 </div>
             </div>
+            
+            <!-- NUEVO: divisor en forma de "S" -->
+            <svg class="origin__divider" viewBox="0 0 100 800" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                    <linearGradient id="originFade" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="30" y2="0">
+                        <stop offset="0%" stop-color="#fbf6f1" stop-opacity="0" />
+                        <stop offset="100%" stop-color="#fbf6f1" stop-opacity="1" />
+                    </linearGradient>
+                </defs>
+            
+                <path class="origin__divider-fade"
+                    d="M19.4,0 C25.4,136 25.4,264 19.4,400 C13.4,536 13.4,664 19.4,800 L30,800 L30,0 Z" />
+            
+                <path class="origin__divider-solid" d="M30,0 L100,0 L100,800 L30,800 Z" />
+            
+                <path class="origin__divider-line" d="M20,0 C26,136 26,264 20,400 C14,536 14,664 20,800" />
+            </svg>
         </section>
 
 
@@ -564,7 +605,7 @@
 
                     <article class="testimonial">
                         <img
-                            src="assets/img/testimonio-laura.jpg"
+                            src="images/testimonials/cliente-testimonio-01.png"
                             alt="Laura M."
                             loading="lazy"
                         >
@@ -578,7 +619,7 @@
 
                     <article class="testimonial">
                         <img
-                            src="assets/img/testimonio-sandra.jpg"
+                            src="images/testimonials/cliente-testimonio-02.png"
                             alt="Sandra P."
                             loading="lazy"
                         >
@@ -592,7 +633,7 @@
 
                     <article class="testimonial">
                         <img
-                            src="assets/img/testimonio-camila.jpg"
+                            src="images/testimonials/cliente-testimonio-03.png"
                             alt="Camila R."
                             loading="lazy"
                         >
@@ -612,7 +653,25 @@
         <!-- =====================================================
              LLAMADO A LA ACCIÓN
              ===================================================== -->
+
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <clipPath id="ctaBrushEdge" clipPathUnits="objectBoundingBox">
+                <path d="M0,0.06 C0.08,0.02 0.12,0.09 0.2,0.03 C0.28,0.1 0.34,0.01 0.42,0.05
+                         C0.5,0.01 0.58,0.09 0.66,0.02 C0.74,0.08 0.8,0.01 0.88,0.06
+                         C0.94,0.02 0.98,0.07 1,0.04
+                         L1,0.95
+                         C0.96,0.99 0.92,0.93 0.86,0.98 C0.8,0.92 0.72,0.99 0.64,0.95
+                         C0.56,0.99 0.48,0.92 0.4,0.98 C0.32,0.93 0.24,0.99 0.16,0.94
+                         C0.1,0.98 0.05,0.93 0,0.97 Z" />
+            </clipPath>
+        </svg>
+
         <section class="cta" id="contacto">
+            <img class="cta__backdrop" src="/images/contact/fondo-cortina.png" alt="" aria-hidden="true">
+
+            <img class="cta__leaf cta__leaf--left" src="images/contact/rama-hojas-verde.png" alt="" aria-hidden="true">
+            <img class="cta__leaf cta__leaf--right" src="/images/contact/hojas-cafes.png" alt="" aria-hidden="true">
+
             <div class="container cta__content">
 
                 <div>
@@ -645,16 +704,19 @@
             <div class="footer__brand">
                 <a href="#inicio" class="logo">
                     <div class="logo__symbol">
-                        <span>R</span>
+                        <img src="images/brand/logo-emariajes.png" alt="">
                     </div>
 
                     <div class="logo__text">
-                        <strong>EMARIAJE</strong>
+                        <strong>EMARIAJES</strong>
                         <small>ARTESANÍA & DISEÑO</small>
                     </div>
-                </a>
-
-                <p>Artesanía que inspira vida.</p>
+                </a> 
+                
+                <p>
+                    Artesania que inspira vida. <br>
+                    Cascajal, Magangué
+                </p>
             </div>
 
 
@@ -687,9 +749,16 @@
                     </a>
 
                     <a href="#" aria-label="Pinterest">
-                        <i class="fa-brands fa-pinterest-p"></i>
+                        <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
+
+                <hr>
+
+                <p>
+                    Emariajes S.A.S. <br>
+                    NIT. 902068175
+                </p>
             </div>
 
 
@@ -713,18 +782,26 @@
                 </p>
             </div>
 
-        </div>
+            <!-- Frase decorativa -->
+            <div class="footer__phrase">
+                <span class="footer__phrase-text">
+                    Artesanía<br>
+                    que inspira<br>
+                    vida
+                </span>
+            </div>
 
+        </div>
 
         <!-- Pie inferior -->
         <div class="footer__bottom">
             <div class="container">
                 <p>
-                    © <span id="currentYear"></span> Emariaje S.A.S.
+                    © <span id="currentYear"></span> Emariajes S.A.S.
                     Todos los derechos reservados.
                 </p>
 
-                <p>Diseñado con ♥ para resaltar lo nuestro.</p>
+                <p> Terminos y condiciones | Politicas de privacidad | Diseño por WebLink360</p>
             </div>
         </div>
     </footer>
