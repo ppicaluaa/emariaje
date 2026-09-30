@@ -152,24 +152,49 @@
                     </div>                
                 </div>    
                 
-                <!-- Transición en S: fundido crema, resplandor y línea -->
+                <!-- ============================================================== 
+                     Transición en S: fundido crema, resplandor y línea 
+                     ==============================================================-->
+
+                <!-- Definiciones de gradientes (invisible, solo declara los <linearGradient>) -->
+                <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="heroLineFade" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#a67c52" stop-opacity="0" />
+                            <stop offset="50%" stop-color="#a67c52" stop-opacity="1" />
+                            <stop offset="100%" stop-color="#a67c52" stop-opacity="0.0" />
+                        </linearGradient>
+                        
+                        <linearGradient id="heroLineGlowFade" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#fff6e8" stop-opacity="0" />
+                            <stop offset="50%" stop-color="#fff6e8" stop-opacity="0.75" />
+                            <stop offset="100%" stop-color="#fff6e8" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                
                 <svg class="hero__blend hero__blend--fade" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M -100,-100 L 56,-100 L 56,0
-                             C 34,110 34,120 56,230
-                             C 78,340 78,350 56,460
+                    <path d="M -100, -100 L 56,-100 
+                             C 49,110 49,120 56,230 
+                             C 63,340 63,350 56,460
                              L 56,560 L -100,560 Z" />
                 </svg>
                 
                 <svg class="hero__blend hero__blend--glow" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M 56,0 C 34,110 34,120 56,230 C 78,340 78,350 56,460" />
+                    <path d="M 56,0 C 49,110 49,120 56,230 C 63,340 63,350 56,460" />
+                </svg>
+
+                <svg class="hero__blend hero__blend--line-glow" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M 56,0 C 49,110 49,120 56,230 C 63,340 63,350 56,460" />
                 </svg>
                 
                 <svg class="hero__blend hero__blend--line" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M 56,0 C 34,110 34,120 56,230 C 78,340 78,350 56,460" />
+                    <path d="M 56,0 C 49,110 49,120 56,230 C 63,340 63,350 56,460" />
                 </svg>
 
             </div>
         </section>
+
 
         <!-- =====================================================
              BENEFICIOS / PROPUESTA DE VALOR
@@ -253,11 +278,15 @@
                         </div>
 
                         <div class="product-card__body">
-                            <h3>Bolso Tradición</h3>
-                            <p>Elaborado con fibras naturales.</p>
+                            <h3>Mochila Recamada En Perla</h3>
+
+                            <p>
+                                Diseño artesanal recamado con perlas y 
+                                delicados detalles que realzan su elegancia.
+                            </p>
 
                             <div class="product-card__footer">
-                                <strong>$120.000</strong>
+                                <strong>$ 220.000</strong>
 
                                 <button
                                     class="cart-button"
@@ -283,11 +312,14 @@
                         </div>
 
                         <div class="product-card__body">
-                            <h3>Individual Tejido</h3>
-                            <p>Ideal para darle un toque especial a tu mesa.</p>
+                            <h3>Mochila En Tela Lentejuela</h3>
+                            <p>
+                                Diseño artesanal en tela con lentejuelas, perfecto 
+                                para destacar con elegancia y personalidad.
+                            </p>
 
                             <div class="product-card__footer">
-                                <strong>$35.000</strong>
+                                <strong>$ 220.000</strong>
 
                                 <button
                                     class="cart-button"
@@ -313,11 +345,14 @@
                         </div>
 
                         <div class="product-card__body">
-                            <h3>Aretes Naturaleza</h3>
-                            <p>Accesorios que realzan tu estilo.</p>
+                            <h3>Mochila Recamada En Perlas</h3>
+                            <p>
+                                Diseño artesanal recamado con perlas y detalles bordados 
+                                que hacen de cada pieza una creación única.
+                            </p>
 
                             <div class="product-card__footer">
-                                <strong>$28.000</strong>
+                                <strong>$ 220.000</strong>
 
                                 <button
                                     class="cart-button"
@@ -336,18 +371,21 @@
                     <article class="product-card">
                         <div class="product-card__image">
                             <img
-                                src="/images/products/mochilas/moc-001-alternativa.jpg"
+                                src="/images/products/mochilas/moc-001-principal.jpg"
                                 alt="Caja decorativa artesanal"
                                 loading="lazy"
                             >
                         </div>
 
                         <div class="product-card__body">
-                            <h3>Caja Decorativa</h3>
-                            <p>Detalles que conectan con tu hogar.</p>
+                            <h3>Mochila Mariana</h3>
+                            <p>
+                                Una pieza artesanal inspirada en la devoción mariana, donde la fe y 
+                                la tradición se unen en un diseño lleno de significado.
+                            </p>
 
                             <div class="product-card__footer">
-                                <strong>$65.000</strong>
+                                <strong>$ 160.000</strong>
 
                                 <button
                                     class="cart-button"

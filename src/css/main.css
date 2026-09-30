@@ -537,7 +537,7 @@ h2 {
 .hero__blend {
     position: absolute;
     top: 0;
-    left: 36%;
+    left: 32%;
     width: 22%;
     height: 100%;
 
@@ -574,13 +574,31 @@ h2 {
     vector-effect: non-scaling-stroke;
 }
 
+.hero__blend--line-glow {
+    left: 30%;
+    filter: blur(6px);    
+}
+
+.hero__blend--line {
+    left: 30%;
+}
+
+.hero__blend--line-glow path {
+    fill: none;
+    stroke: url(#heroLineGlowFade);
+    stroke-width: 5px;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
 /* Capa 3: línea fina nítida en forma de S */
 .hero__blend--line path {
     fill: none;
-    stroke: rgba(107, 70, 54, 0.45);
-    stroke-width: 1px;
+    stroke: url(#heroLineFade);
+    stroke-width: 1.3px;
     stroke-linecap: round;
     vector-effect: non-scaling-stroke;
+    opacity: 0.15;
 }
 
 /* ============================================================
@@ -790,7 +808,7 @@ h2 {
     min-height: 36px;
 
     color: #706964;
-    font-size: 0.62rem;
+    font-size: 0.7rem;
     line-height: 1.45;
 }
 
