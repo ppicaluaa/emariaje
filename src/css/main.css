@@ -601,48 +601,6 @@ h2 {
     opacity: 0.15;
 }
 
-/* ============================================================
-   FRASE DECORATIVA DEL HERO
-   ============================================================ */
-
-.hero__phrase {
-    position: absolute;
-
-    right: 30px;
-    top: 200px;
-
-    z-index: 5;
-
-    color: var(--color-brown);
-
-    font-family: "Allura", cursive;
-    font-size: 1.8rem;
-    font-style: italic;
-    font-weight: 400;
-
-    line-height: 1.05;
-
-    text-align: center;
-
-    pointer-events: none;
-}
-
-.hero__phrase::after {
-    content: "";
-    display: block;
-
-    width: 40px;
-    height: 1px;
-
-    margin: 15px auto 0;
-
-    background-color: var(--color-terracotta);
-}
-
-.hero__phrase em {
-    color: var(--color-terracotta);
-}
-
 
 /* ============================================================
    6. BENEFICIOS
@@ -1709,6 +1667,39 @@ h2 {
         gap: 18px;
     }
 
+    .hero,
+    .hero__content,
+    .hero__image {
+        height: 460px;
+        min-height: 460px;
+    }
+
+    .hero__image img {
+        object-position: 60% center; /* encuadra el bolso; mueve el 65% si lo quieres más a un lado */
+    }
+
+    .hero__text {
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+    .hero__description {
+        margin: 16px 0;
+    }
+
+    .hero__headline-line {
+        white-space: normal; /* ya no fuerza una sola línea: permite que el texto respete su columna */
+    }
+
+    .hero h1 {
+        font-size: clamp(2.1rem, 5vw, 3.1rem); /* más pequeño que en escritorio */
+    }
+
+    .hero__signature {
+        font-size: 1.15rem; /* evita el salto raro después de "tu" al darle más aire por línea */
+        margin-top: 14px;
+    }
+
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1716,6 +1707,32 @@ h2 {
     .benefits__grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 20px 0;
+    }    
+
+    /* 3 columnas (42/38/20) quedan muy comprimidas en tablet: pasamos a 2,
+       con el panel decorativo ocupando su propia fila completa */
+    .story,
+    .origin {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .story__panel,
+    .origin__panel {
+        grid-column: 1 / -1;
+        display: none;
+    }
+
+    .story__divider,
+    .origin__divider {
+        display: none; /* la curva en S dependía de las 3 columnas exactas */
+    }
+
+    .process__leaves {
+        display: none;
+    }
+
+    .footer__phrase {
+        display: none;        
     }
 
     .story__decoration,
@@ -1809,24 +1826,56 @@ h2 {
         height: 37px;
     }
 
+    /* Al apilarse texto e imagen, el Hero ya no necesita altura fija */
+    .hero {
+        height: auto;
+        min-height: auto;
+    }
 
+    .hero::before {
+        display: none;
+        /* las hojas del fondo son demasiado grandes para el móvil */
+    }
+
+    .hero__image {
+        display: none;
+    }
+
+    /* Las capas decorativas del Hero dependían del layout de 2 columnas */
+    .hero__blend {
+        display: none;
+    }
+    
     /* Hero */
     .hero__content {
         display: flex;
         flex-direction: column;
+        height: auto;
         min-height: auto;
     }
 
     .hero__text {
-        padding: 50px 0 35px;
+        padding: 20px 18px;
+
+         align-items: stretch;   /* antes: center — ahora los hijos ocupan todo el ancho */
+         text-align: center;     /* el texto sigue centrado dentro de esa caja */
     }
 
-    .hero h1 {
+    .hero h1 {        
         font-size: clamp(3rem, 15vw, 4.2rem);
     }
 
-    .hero__image {
-        min-height: 360px;
+    .hero__description {
+        margin: 8px auto 18px;
+    }
+
+    .hero__buttons {
+        flex-direction: column; /* los apila uno debajo del otro */
+        gap: 12px;
+    }
+
+    .hero__buttons .button {
+        width: 100%; /* mismo ancho que el párrafo, que ya ocupa toda la columna */
     }
 
     .hero__phrase {
@@ -1834,8 +1883,7 @@ h2 {
         right: 15px;
         font-size: 1.4rem;
     }
-
-
+    
     /* Beneficios */
     .benefits__grid {
         grid-template-columns: 1fr;
@@ -1843,10 +1891,9 @@ h2 {
         padding: 25px 0;
     }
 
-
     /* Secciones */
     .section {
-        padding: 55px 0;
+        padding: 26px 0;
     }
 
     .section-heading,
@@ -1854,6 +1901,11 @@ h2 {
         align-items: flex-start;
         flex-direction: column;
         gap: 12px;
+    }
+
+    .section-heading--center {
+        align-items: center;
+        text-align: center;
     }
 
 
@@ -1864,8 +1916,7 @@ h2 {
 
     .product-card__image {
         height: 260px;
-    }
-
+    }    
 
     /* Historia y origen */
     .story,
@@ -1883,6 +1934,14 @@ h2 {
         padding: 50px 6%;
     }
 
+    .story__content .button {
+        width: 100%;
+    }
+
+    .origin__content .button {
+        width: 100%;
+    }
+
     .story__decoration,
     .origin__phrase {
         position: static;
@@ -1893,19 +1952,34 @@ h2 {
         opacity: 1;
     }
 
+    /* Panel decorativo de Historia/Origen: le damos espacio propio */
+    .story__panel,
+    .origin__panel {
+        min-height: 220px;
+        padding: 30px 6%;
+    }
 
+    .story__panel {
+        display: none;
+    }
+
+    .story__branch {
+        position: static;
+        width: 160px;
+        margin: 20px auto 0;
+        opacity: 0.6;
+    }  
+    
     /* Proceso */
     .process__grid {
         grid-template-columns: 1fr;
         gap: 28px;
     }
 
-
     /* Testimonios */
     .testimonials__grid {
         grid-template-columns: 1fr;
     }
-
 
     /* CTA */
     .cta__content {
@@ -1915,11 +1989,26 @@ h2 {
         padding: 45px 0;
     }
 
+    /* Las hojas del CTA tapan el texto cuando todo se apila en una columna */
+    .cta__leaf {
+        display: none;
+    }
+
+    .button--light {
+        width: 90%;
+    }
 
     /* Footer */
     .footer__grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    /* El desplazamiento manual de la frase del footer era para escritorio */
+    .footer__phrase {
+        left: 0;
+        top: 0;
+        margin-top: 10px;
     }
 
     .footer__bottom .container {
