@@ -1,0 +1,469 @@
+/* ============================================================
+   EMARIAJES - DETALLE DEL PRODUCTO
+   ------------------------------------------------------------
+   Estilos de la página individual y de la galería fotográfica.
+   Los estilos generales se importan desde main.css.
+   ============================================================ */
+
+
+/* ============================================================
+   1. CONFIGURACIÓN GENERAL
+   ============================================================ */
+
+.product-detail-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-cream, #faf7f0);
+  color: var(--color-dark, #292724);
+  font-family: var(--font-body, "Montserrat", sans-serif);
+}
+
+.product-detail-page .container {
+  width: min(1150px, 90%);
+  margin-inline: auto;
+}
+
+
+/* ============================================================
+   2. ENCABEZADO
+   ============================================================ */
+
+.detail-header {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(107, 70, 54, 0.1);
+}
+
+.detail-header__content {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.detail-header__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--color-brown, #6b4636);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.detail-header__back:hover {
+  color: var(--color-terracotta, #b9684d);
+}
+
+.detail-header__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-brown, #6b4636);
+  font-family: var(--font-title, "Cormorant Garamond", serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.detail-header__brand span {
+  margin-top: 5px;
+  color: var(--color-terracotta, #b9684d);
+  font-family: var(--font-body, "Montserrat", sans-serif);
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+
+/* ============================================================
+   3. CONTENIDO PRINCIPAL Y MIGAS DE PAN
+   ============================================================ */
+
+.product-detail {
+  flex: 1;
+  padding: 25px 0 55px;
+}
+
+.detail-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  color: #77716d;
+  font-size: 0.72rem;
+}
+
+.detail-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.detail-breadcrumb a:hover {
+  color: var(--color-terracotta, #b9684d);
+}
+
+.detail-breadcrumb i {
+  color: var(--color-terracotta, #b9684d);
+  font-size: 0.6rem;
+}
+
+.detail-breadcrumb span {
+  color: var(--color-brown, #6b4636);
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   4. DISTRIBUCIÓN DE LA GALERÍA Y LA INFORMACIÓN
+   ============================================================ */
+
+.product-detail__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: start;
+  gap: 55px;
+}
+
+
+/* ============================================================
+   5. FOTOGRAFÍA PRINCIPAL
+   ============================================================ */
+
+.product-gallery {
+  min-width: 0;
+}
+
+.product-gallery__main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f0e5dc;
+}
+
+.product-gallery__main img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* ============================================================
+   6. FLECHAS PARA CAMBIAR DE FOTOGRAFÍA
+   ============================================================ */
+
+.product-gallery__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-brown, #6b4636);
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.product-gallery__arrow:hover {
+  background: var(--color-brown, #6b4636);
+  color: #ffffff;
+}
+
+.product-gallery__arrow--prev {
+  left: 14px;
+}
+
+.product-gallery__arrow--next {
+  right: 14px;
+}
+
+.product-gallery__arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+
+/* ============================================================
+   7. CONTADOR DE FOTOGRAFÍAS
+   ============================================================ */
+
+.product-gallery__counter {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(41, 39, 36, 0.72);
+  color: #ffffff;
+  font-size: 0.7rem;
+}
+
+
+/* ============================================================
+   8. MINIATURAS DE LAS FOTOGRAFÍAS
+   ============================================================ */
+
+.product-gallery__thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.product-gallery__thumbnail {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: #f0e5dc;
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.product-gallery__thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-gallery__thumbnail:hover {
+  opacity: 0.8;
+}
+
+.product-gallery__thumbnail.active {
+  border-color: var(--color-terracotta, #b9684d);
+}
+
+.product-gallery__thumbnail:focus-visible,
+.product-gallery__arrow:focus-visible {
+  outline: 2px solid var(--color-brown, #6b4636);
+  outline-offset: 3px;
+}
+
+
+/* ============================================================
+   9. INFORMACIÓN DEL PRODUCTO
+   ============================================================ */
+
+.product-detail__info {
+  padding-top: 15px;
+}
+
+.product-detail__eyebrow {
+  margin-bottom: 12px;
+  color: var(--color-terracotta, #b9684d);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.product-detail__info h1 {
+  margin-bottom: 16px;
+  color: var(--color-brown, #6b4636);
+  font-family: var(--font-title, "Cormorant Garamond", serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.product-detail__price {
+  margin-bottom: 22px;
+  color: var(--color-brown, #6b4636);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.product-detail__description {
+  color: #625a54;
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.product-detail__divider {
+  width: 65px;
+  height: 1px;
+  margin: 25px 0;
+  background: var(--color-terracotta, #b9684d);
+}
+
+.product-detail__message {
+  margin-bottom: 25px;
+  color: #625a54;
+  font-family: var(--font-title, "Cormorant Garamond", serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.product-detail__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid var(--color-brown, #6b4636);
+  border-radius: 7px;
+  color: var(--color-brown, #6b4636);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.product-detail__button:hover {
+  background: var(--color-brown, #6b4636);
+  color: #ffffff;
+}
+
+
+/* ============================================================
+   10. ESTADO CUANDO EL PRODUCTO NO EXISTE
+   ============================================================ */
+
+.product-detail__not-found {
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.product-detail__not-found h1 {
+  margin-bottom: 15px;
+  color: var(--color-brown, #6b4636);
+  font-family: var(--font-title, "Cormorant Garamond", serif);
+  font-size: 2.5rem;
+}
+
+.product-detail__not-found p {
+  margin-bottom: 22px;
+  color: #625a54;
+}
+
+.product-detail__not-found a {
+  color: var(--color-terracotta, #b9684d);
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   11. PIE DE PÁGINA
+   ============================================================ */
+
+.detail-footer {
+  padding: 20px 0;
+  background: #ffffff;
+  border-top: 1px solid rgba(107, 70, 54, 0.1);
+  text-align: center;
+}
+
+.detail-footer p {
+  color: #77716d;
+  font-size: 0.7rem;
+}
+
+.detail-footer p + p {
+  margin-top: 4px;
+}
+
+
+/* ============================================================
+   12. ADAPTACIÓN PARA TABLETAS
+   ============================================================ */
+
+@media (max-width: 850px) {
+
+  .product-detail__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .product-gallery {
+    width: min(100%, 650px);
+    margin-inline: auto;
+  }
+
+  .product-detail__info {
+    padding-top: 0;
+  }
+
+}
+
+
+/* ============================================================
+   13. ADAPTACIÓN PARA CELULARES
+   ============================================================ */
+
+@media (max-width: 520px) {
+
+  .detail-header__content {
+    min-height: 68px;
+    gap: 10px;
+  }
+
+  .detail-header__back {
+    gap: 6px;
+    font-size: 0.68rem;
+  }
+
+  .detail-header__brand {
+    font-size: 1.35rem;
+  }
+
+  .detail-header__brand span {
+    font-size: 0.4rem;
+  }
+
+  .product-detail {
+    padding-top: 18px;
+  }
+
+  .detail-breadcrumb {
+    gap: 7px;
+    margin-bottom: 20px;
+    font-size: 0.65rem;
+  }
+
+  .product-detail__layout {
+    gap: 25px;
+  }
+
+  .product-gallery__thumbnails {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .product-gallery__arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .product-detail__info h1 {
+    font-size: 2.3rem;
+  }
+
+}

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Conoce los detalles y las diferentes vistas de nuestras mochilas artesanales EMARIAJES."
+  >
+
+  <title>Detalle del producto | EMARIAJES</title>
+
+  <!-- Fuentes de la identidad visual de EMARIAJES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Iconos -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+</head>
+
+<body class="product-detail-page">
+
+  <!-- ================================================
+       ENCABEZADO DE LA PÁGINA
+       ================================================ -->
+  <header class="detail-header">
+    <div class="container detail-header__content">
+
+      <!-- Enlace para regresar al catálogo -->
+      <a
+        class="detail-header__back"
+        href="./productos/productos.html"
+      >
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        Volver al catálogo
+      </a>
+
+      <!-- Identidad de la marca -->
+      <a class="detail-header__brand" href="./index.html">
+        EMARIAJES
+        <span>ARTESANÍA &amp; DISEÑO</span>
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- ================================================
+       CONTENIDO PRINCIPAL DEL PRODUCTO
+       JavaScript carga los datos de la mochila seleccionada.
+       ================================================ -->
+  <main class="product-detail">
+
+    <div class="container">
+
+      <!-- Ruta de navegación -->
+      <nav class="detail-breadcrumb" aria-label="Ruta de navegación">
+        <a href="./index.html">Inicio</a>
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        <a href="./productos/productos.html">Productos</a>
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        <span id="productBreadcrumb">Detalle del producto</span>
+      </nav>
+
+
+      <!-- Contenedor de la galería y la información -->
+      <section class="product-detail__layout" id="productDetail">
+
+        <!-- ==========================================
+             GALERÍA FOTOGRÁFICA
+             ========================================== -->
+        <div class="product-gallery">
+
+          <!-- Fotografía principal de la mochila -->
+          <div class="product-gallery__main">
+
+            <img
+              id="productMainImage"
+              src=""
+              alt=""
+            >
+
+            <!-- Botón para ver la fotografía anterior -->
+            <button
+              class="product-gallery__arrow product-gallery__arrow--prev"
+              id="previousImage"
+              type="button"
+              aria-label="Ver fotografía anterior"
+            >
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+
+            <!-- Botón para ver la fotografía siguiente -->
+            <button
+              class="product-gallery__arrow product-gallery__arrow--next"
+              id="nextImage"
+              type="button"
+              aria-label="Ver fotografía siguiente"
+            >
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+
+            <!-- Indicador de la fotografía seleccionada -->
+            <span
+              class="product-gallery__counter"
+              id="imageCounter"
+              aria-live="polite"
+            >
+              1 / 1
+            </span>
+
+          </div>
+
+
+          <!-- Miniaturas de las demás vistas -->
+          <div
+            class="product-gallery__thumbnails"
+            id="productThumbnails"
+            aria-label="Seleccionar fotografía del producto"
+          >
+            <!-- JavaScript inserta aquí las miniaturas -->
+          </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             INFORMACIÓN DEL PRODUCTO
+             ========================================== -->
+        <div class="product-detail__info">
+
+          <p class="product-detail__eyebrow">
+            ARTESANÍA HECHA A MANO
+          </p>
+
+          <!-- Nombre dinámico de la mochila -->
+          <h1 id="productName">Cargando producto...</h1>
+
+          <!-- Precio dinámico -->
+          <p class="product-detail__price" id="productPrice"></p>
+
+          <!-- Descripción dinámica -->
+          <p class="product-detail__description" id="productDescription"></p>
+
+          <!-- Separador visual -->
+          <div class="product-detail__divider"></div>
+
+          <p class="product-detail__message">
+            Cada pieza refleja el cuidado, la creatividad y el
+            talento de nuestras manos artesanas.
+          </p>
+
+          <!-- Enlace para volver al catálogo -->
+          <a
+            class="product-detail__button"
+            href="./productos/productos.html"
+          >
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Seguir explorando
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- Mensaje si el identificador no corresponde a un producto -->
+      <section class="product-detail__not-found" id="productNotFound" hidden>
+
+        <h1>Producto no encontrado</h1>
+
+        <p>
+          No pudimos encontrar esta mochila. Regresa al catálogo
+          para descubrir nuestras creaciones.
+        </p>
+
+        <a href="./productos/productos.html">
+          Ver catálogo de mochilas
+        </a>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ================================================
+       PIE DE PÁGINA
+       ================================================ -->
+  <footer class="detail-footer">
+    <div class="container">
+      <p>EMARIAJES · Hecho a mano, hecho con alma.</p>
+      <p>Cascajal · Magangué, Bolívar</p>
+    </div>
+  </footer>
+
+
+  <!-- JavaScript de la página de detalle -->
+  <script type="module" src="/src/js/pages/producto.js"></script>
+
+</body>
+</html>

@@ -12,6 +12,12 @@ export default defineConfig({
           import.meta.dirname,
           'productos/productos.html'
         ),
+
+         // Nueva página de detalle de las mochilas.
+        producto: resolve(
+          import.meta.dirname,
+          'producto.html'
+        ),
       },
     },
   },
