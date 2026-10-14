@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora las mochilas artesanales de EMARIAJES, elaboradas con dedicación desde Cascajal, Magangué.">
+  <title>Nuestras mochilas | EMARIAJES</title>
+
+  <!-- Optimiza la conexión con Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Tipografías de la marca -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tipografías cursiva -->
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="catalog-page">  
+
+   <!-- =========================================================
+         Encabezado y navegación principal
+         ========================================================= -->
+  <header class="header catalog-header">
+    <div class="container header__inner">
+      
+      <!-- Logo con enlace a la página de inicio -->
+      <a href="../index.html" class="logo" aria-label="EMARIAJES, inicio">
+        <div class="logo__symbol">
+          <img src="./images/brand/logo-emariajes.png" alt="Logo de EMARIAJES">
+        </div>
+        <div class="logo__text">
+          <strong>EMARIAJES</strong>
+          <small>ARTESANÍA &amp; DISEÑO</small>
+        </div>
+      </a>
+
+       <!-- Enlaces de navegación entre las secciones del sitio -->
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="../index.html" class="nav__link">Inicio</a>
+         <a href="./productos.html" class="nav__link active" aria-current="page">Productos</a>
+        <a href="../#historia" class="nav__link">Nuestra historia</a>       
+        <a href="../#proceso" class="nav__link">Proceso</a>
+        <a href="../#contacto" class="nav__link">Contacto</a>
+      </nav>
+
+      <!-- Acciones de búsqueda y carrito -->
+      <div class="header__actions">
+        <button class="header__icon" id="searchToggle" type="button" aria-label="Buscar productos">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="header__cart" type="button" aria-label="Carrito de compras">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart__count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Formulario de búsqueda desplegable -->
+    <form class="catalog-search" id="catalogSearchForm" hidden role="search">
+      <label for="catalogSearch">Buscar mochilas</label>
+      <input id="catalogSearch" type="search" placeholder="Escribe el nombre de una mochila">
+      <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </header>
+
+
+  <!-- =========================================================
+         Hero
+         ========================================================= -->
+  <section class="products-hero">
+    <div class="products-hero__content">
+      <p class="eyebrow">NUESTRA COLECCIÓN</p>
+      <h1>
+        <span class="initial-letter">n</span>
+        uestras
+        <span class="initial-letter">m</span>
+        ochilas
+      </h1>
+      <p>Diseños artesanales que cuentan historias, elaborados con amor, tradición y el talento de nuestras manos.</p>
+    </div>
+
+    <img class="products-hero__image" src="/images/products/mochilas/moc-005-principal.jpg"
+      alt="Mochila artesanal de EMARIAJES">
+  </section>
+
+  <!-- =========================================================
+         Contenido principal del catálogo
+         ========================================================= -->
+  <main class="products-page">
+    <div class="container">
+
+      <!-- Indica la ubicación del usuario dentro del sitio -->
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../">Inicio</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Productos</span><i class="fa-solid fa-chevron-right"></i>
+        <strong>Mochilas</strong>
+      </nav>
+
+      <div class="products-layout">
+
+        <!-- Panel lateral de filtros -->
+        <aside class="products-sidebar" aria-label="Filtros de productos">
+
+          <!-- Filtro por categoría -->
+          <section class="filter-block">
+            <h2>Categorías</h2>
+           
+            <button class="category-filter active" type="button" data-category="all">
+              <i class="fa-solid fa-bag-shopping"></i><span class="category-filter__label">Todas las mochilas</span><span class="filter-count" data-count-category="all">22</span>
+            </button>
+           
+            <button class="category-filter" type="button" data-category="recamadas">
+              <i class="fa-solid fa-bag-shopping"></i><span class="category-filter__label">Recamadas</span><span class="filter-count" data-count-category="recamadas">—</span>
+            </button>
+            
+            <button class="category-filter" type="button" data-category="tela">
+              <i class="fa-solid fa-bag-shopping"></i><span class="category-filter__label">En tela</span><span class="filter-count" data-count-category="tela">—</span>
+            </button>
+            
+            <button class="category-filter" type="button" data-category="lentejuela">
+              <i class="fa-solid fa-bag-shopping"></i><span class="category-filter__label">En lentejuela</span><span class="filter-count" data-count-category="lentejuela">—</span>
+            </button>
+            
+            <button class="category-filter" type="button" data-category="religiosa">
+              <i class="fa-solid fa-cross"></i><span class="category-filter__label">Inspiración religiosa</span><span class="filter-count" data-count-category="religiosa">—</span>
+            </button>
+          </section>
+
+          <!-- Filtros adicionales -->
+          <section class="filter-block">
+            <h2>Filtrar por</h2>
+            
+            <!-- Selección del rango de precios -->
+            <div class="filter-group">
+              <div class="filter-group__title">
+                <span>Precio</span>
+                <i class="fa-solid fa-chevron-up"></i>
+              </div>
+              
+
+              <div class="price-range">
+                <input type="range" id="priceMin" min="0" max="500000" step="10000" value="0" aria-label="Precio mínimo">
+                <input type="range" id="priceMax" min="0" max="500000" step="10000" value="500000" aria-label="Precio máximo">
+              </div>
+              
+              <!-- Valores actuales del rango -->
+              <div class="price-values">
+                <span id="priceMinLabel">$0</span>
+                <span id="priceMaxLabel">$500.000</span>
+              </div>
+            </div>
+
+            <!-- Selección por color -->
+            <div class="filter-group">
+              <div class="filter-group__title">
+                <span>Color</span>
+                <i class="fa-solid fa-chevron-up"></i>
+              </div>
+
+              <div class="color-options">
+                <button class="color-option color-option--beige" type="button" data-color="beige" aria-label="Filtrar color beige" aria-pressed="false"></button>
+                <button class="color-option color-option--pink" type="button" data-color="rosado" aria-label="Filtrar color rosado" aria-pressed="false"></button>
+                <button class="color-option color-option--blue" type="button" data-color="azul" aria-label="Filtrar color azul" aria-pressed="false"></button>
+                <button class="color-option color-option--black" type="button" data-color="negro" aria-label="Filtrar color negro" aria-pressed="false"></button>
+                <button class="color-option color-option--brown" type="button" data-color="marron" aria-label="Filtrar color marrón" aria-pressed="false"></button>
+              </div>
+            </div>
+
+            <!-- Filtro de disponibilidad -->
+            <div class="filter-group">
+              <div class="filter-group__title">
+                <span>Disponibilidad</span>
+                <i class="fa-solid fa-chevron-up"></i>
+              </div>
+
+              <label class="availability">
+                <input type="checkbox" id="availableOnly">
+                <span>Solo disponibles</span>
+              </label>
+            </div>
+
+             <!-- Restablece los filtros del catálogo -->
+            <button class="clear-filters" id="clearFilters" type="button">
+              Limpiar filtros
+            </button>
+          </section>
+        </aside>
+
+        <!-- =========================================================
+             Área de resultados del catálogo
+             ========================================================= -->
+        <section class="products-content" aria-label="Catálogo de mochilas">
+          
+          <!-- Búsqueda integrada en el catálogo -->
+          <div class="catalog-search-inline" id="catalogSearchInline" hidden>
+            <label for="catalogSearchInlineInput">Buscar en el catálogo</label>
+            <input id="catalogSearchInlineInput" type="search" placeholder="Nombre de la mochila">
+          </div>
+          
+          <!-- Cantidad de productos, orden y presentación -->
+          <div class="products-toolbar">
+            <p class="products-count">
+              <strong id="productsCount">22</strong> 
+              productos encontrados
+            </p>
+            
+            <div class="products-toolbar__actions">
+
+              <!-- Ordenamiento de productos -->
+              <label class="sort-select" for="sortProducts">Ordenar por:
+                <select id="sortProducts">
+                  <option value="recent">Más recientes</option>
+                  <option value="price-low">Precio: menor a mayor</option>
+                  <option value="price-high">Precio: mayor a menor</option>
+                  <option value="name">Nombre</option>
+                </select>
+              </label>
+              
+              <!-- Cambia entre cuadrícula y lista -->
+              <div class="view-buttons" aria-label="Modo de visualización">
+                <button class="view-button active" type="button" data-view="grid" aria-label="Vista cuadrícula" aria-pressed="true"><i class="fa-solid fa-grip"></i></button>
+                <button class="view-button" type="button" data-view="list" aria-label="Vista lista" aria-pressed="false"><i class="fa-solid fa-list"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- JavaScript inserta aquí las tarjetas de productos -->
+          <div class="products-grid" id="productsGrid" aria-live="polite"></div>
+          
+          <!-- Mensaje cuando no hay resultados -->
+          <p class="empty-products" id="emptyProducts" hidden>
+            No encontramos mochilas con esos filtros. Prueba cambiando los criterios.
+          </p>
+
+          <!-- Controles de navegación entre páginas del catálogo -->
+          <nav class="pagination" id="pagination" aria-label="Paginación de productos"></nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================
+       Llamado a la acción para contactar con la marca 
+       ========================================================= -->
+  <section class="products-cta">
+    <div class="container products-cta__content">
+      <span class="products-cta__ornament" aria-hidden="true">✧</span>
+
+      <h2>Lleva contigo una historia hecha a mano</h2>
+
+      <a href="../index.html#contacto" class="button button--primary">
+        Explora nuestra colección 
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Carga la lógica JavaScript del catálogo -->
+  <script type="module" src="/src/js/pages/productos.js"></script>
+</body>
+</html>

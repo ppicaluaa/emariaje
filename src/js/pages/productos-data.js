@@ -1,0 +1,319 @@
+// Catálogo editable de EMARIAJES.
+// Cambia name, description, price, category, color y available por los datos reales.
+// Las rutas de imágenes corresponden a los archivos del ZIP productos.zip.
+// category: usa "recamadas", "tela", "lentejuela" o "religiosa".
+// color: usa "beige", "rosado", "azul", "negro" o "marron".
+
+export const products = [
+  {
+    id: "moc-001",
+    name: "Mochila 001",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-001-principal.jpg",
+      "moc-001-alternativa.jpg",
+      "moc-001-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-002",
+    name: "Mochila 002",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-002-principal.jpg",
+      "moc-002-alternativa.jpg",
+      "moc-002-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-003",
+    name: "Mochila 003",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-003-principal.jpg",
+      "moc-003-alternativa.jpg",
+      "moc-003-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-004",
+    name: "Mochila 004",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-004-principal.jpg",
+      "moc-004-alternativa.jpg",
+      "moc-004-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-005",
+    name: "Mochila 005",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-005-principal.jpg",
+      "moc-005-alternativa.jpg",
+      "moc-005-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-006",
+    name: "Mochila 006",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-006-principal.jpg",
+      "moc-006-alternativa.jpg",
+      "moc-006-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-007",
+    name: "Mochila 007",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-007-principal.jpg",
+      "moc-007-alternativa.jpg",
+      "moc-007-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-008",
+    name: "Mochila 008",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-008-principal.jpg",
+      "moc-008-alternativa.jpg",
+      "moc-008-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-009",
+    name: "Mochila 009",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-009-principal.jpg",
+      "moc-009-alternativa.jpg",
+      "moc-009-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-010",
+    name: "Mochila 010",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-010-principal.jpg",
+      "moc-010-alternativa.jpg",
+      "moc-010-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-011",
+    name: "Mochila 011",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-011-principal.jpg",
+      "moc-011-alternativa.jpg",
+      "moc-011-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-012",
+    name: "Mochila 012",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-012-principal.jpg",
+      "moc-012-alternativa.jpg",
+      "moc-012-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-013",
+    name: "Mochila 013",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-013-principal.jpg",
+      "moc-013-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-014",
+    name: "Mochila 014",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-014-principal.png",
+      "moc-014-alternativa.png",
+      "moc-014-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-015",
+    name: "Mochila 015",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-015-principal.jpg",
+      "moc-015-alternativa.jpg",
+      "moc-015-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-016",
+    name: "Mochila 016",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-016-alternativa.jpg",
+      "moc-016-modelo1.jpg",
+      "moc-016-modelo2.jpg",
+    ]
+  },
+  {
+    id: "moc-017",
+    name: "Mochila 017",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-017-principal.jpg",
+      "moc-017-alternativa.jpg",
+      "moc-017-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-018",
+    name: "Mochila 018",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-018-principal.jpg",
+      "moc-018-alternativa.jpg",
+      "moc-018-contexto.jpg",
+      "moc-018-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-019",
+    name: "Mochila 019",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-019-principal.jpg",
+      "moc-019-alternativa.jpg",
+      "moc-019-modelo.jpg",
+    ]
+  },
+  {
+    id: "moc-020",
+    name: "Mochila 020",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-020-principal.jpg",
+      "moc-020-alternativa.jpg",
+      "moc-020-modelo1.jpg",
+      "moc-020-modelo2.png",
+      "moc-020-modelo3.png",
+    ]
+  },
+  {
+    id: "moc-021",
+    name: "Mochila 021",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-021-principal.jpg",
+      "moc-021-alternativa.jpg",
+      "moc-021-modelo1.jpg",
+    ]
+  },
+  {
+    id: "moc-022",
+    name: "Mochila 022",
+    description: "Agrega aquí la descripción breve de esta mochila.",
+    price: null, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    category: "", // recamadas | tela | lentejuela | religiosa
+    color: "", // beige | rosado | azul | negro | marron
+    available: true,
+    images: [
+      "moc-022-principal.jpg",
+      "moc-022-alternativa.jpg",
+      "moc-022-modelo1.jpg",
+      "moc-022-modelo2.jpg",
+    ]
+  },
+];

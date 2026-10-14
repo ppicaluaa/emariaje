@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-
     <!--
         Configuración para que la página se adapte correctamente
         a celulares, tabletas y computadores.
@@ -12,10 +11,22 @@
     <!-- Descripción básica para buscadores -->
     <meta
         name="description"
-        content="Emariaje - Artesanía y diseño. Bolsos, accesorios y decoración hechos a mano desde Cascajal, Magangué."
+        content="Emariajes - Artesanía y diseño. Bolsos, accesorios y decoración hechos a mano desde Cascajal, Magangué."
     >
 
-    <title>Emariaje | Artesanía & Diseño</title>
+    <!-- 🟢 CONFIGURACIÓN PARA WHATSAPP Y REDES (OPEN GRAPH) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Emariajes | Artesanía & Diseño" />
+    <meta property="og:description" content="Bolsos, accesorios y decoración hechos a mano desde Cascajal, Magangué. Artesanía y diseño único." />
+    <!-- ⚠️ IMPORTANTE: Cambia la URL de abajo por la dirección real de tu imagen (Debe incluir https://) -->
+    <meta property="og:image" content="https://tuweb.com" />
+    <!-- ⚠️ IMPORTANTE: Cambia la URL de abajo por la dirección real de tu sitio web -->
+    <meta property="og:url" content="https://tuweb.com" />
+
+    <!-- 🟢 COLOR DE LA BARRA DEL NAVEGADOR EN CELULARES -->
+    <!-- Cambia el #HEX por el color principal de la identidad visual de Emariajes -->
+    <meta name="theme-color" content="#A3704C">
+    <title>Emariajes | Artesanía & Diseño</title>
 
     <!--
         Fuentes utilizadas en la identidad visual:
@@ -40,19 +51,56 @@
     >    
 </head>
 
-<body>
-    
+<body>   
+
+    <!-- =========================================================
+         DEFINICIONES SVG GLOBALES (Gradientes y Máscaras)
+         ========================================================= -->
+    <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+            <!-- Gradiente unificado para los divisores en S -->
+            <linearGradient id="dividerFade" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="30" y2="0">
+                <stop offset="0%" stop-color="#fbf6f1" stop-opacity="0" />
+                <stop offset="100%" stop-color="#fbf6f1" stop-opacity="1" />
+            </linearGradient>
+
+            <!-- Gradientes del Hero -->
+            <linearGradient id="heroLineFade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#a67c52" stop-opacity="0" />
+                <stop offset="50%" stop-color="#a67c52" stop-opacity="1" />
+                <stop offset="100%" stop-color="#a67c52" stop-opacity="0.0" />
+            </linearGradient>
+            
+            <linearGradient id="heroLineGlowFade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fff6e8" stop-opacity="0" />
+                <stop offset="50%" stop-color="#fff6e8" stop-opacity="0.75" />
+                <stop offset="100%" stop-color="#fff6e8" stop-opacity="0" />
+            </linearGradient>
+
+            <!-- Borde irregular del CTA -->
+            <clipPath id="ctaBrushEdge" clipPathUnits="objectBoundingBox">
+                <path d="M0,0.06 C0.08,0.02 0.12,0.09 0.2,0.03 C0.28,0.1 0.34,0.01 0.42,0.05
+                         C0.5,0.01 0.58,0.09 0.66,0.02 C0.74,0.08 0.8,0.01 0.88,0.06
+                         C0.94,0.02 0.98,0.07 1,0.04
+                         L1,0.95
+                         C0.96,0.99 0.92,0.93 0.86,0.98 C0.8,0.92 0.72,0.99 0.64,0.95
+                         C0.56,0.99 0.48,0.92 0.4,0.98 C0.32,0.93 0.24,0.99 0.16,0.94
+                         C0.1,0.98 0.05,0.93 0,0.97 Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
     <!-- =========================================================
          HEADER / BARRA DE NAVEGACIÓN
          ========================================================= -->
-    <header class="header" id="inicio">
+    <header class="header">
         <div class="container header__content">
 
-            <!-- Logo de EMARIAJE -->
-            <a href="#inicio" class="logo" aria-label="EMARIAJE - Inicio">
+            <!-- Logo de EMARIAJES -->
+            <a href="#inicio" class="logo" aria-label="EMARIAJES - Inicio">
             
                 <div class="logo__symbol">
-                    <img src="/images/brand/logo-emariajes.png" alt="Logo de EMARIAJE">
+                    <img src="/images/brand/logo-emariajes.png" alt="Logo de EMARIAJES">
                 </div>
             
                 <div class="logo__text">
@@ -75,7 +123,7 @@
             <!-- Menú principal -->
             <nav class="nav" id="mainNav">
                 <a href="#inicio" class="nav__link active">Inicio</a>
-                <a href="#productos" class="nav__link">Productos</a>
+                <a href="./productos/productos.html" class="nav__link">Productos</a>
                 <a href="#historia" class="nav__link">Nuestra historia</a>
                 <a href="#proceso" class="nav__link">Proceso</a>
                 <a href="#contacto" class="nav__link">Contacto</a>
@@ -83,7 +131,7 @@
 
             <!-- Botón principal de WhatsApp -->
             <a
-                class="button button--whatsapp header__whatsapp"
+                class="button button--primary header__whatsapp"
                 href="https://wa.me/573001234567?text=Hola%20Emariaje,%20quiero%20conocer%20sus%20productos."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -100,11 +148,11 @@
         <!-- =====================================================
              HERO
              ===================================================== -->
-        <section class="hero">
+        <section class="hero" id="inicio">
             <div class="container hero__content">
 
                 <div class="hero__text">
-                    <p class="eyebrow">BIENVENIDA A EMARIAJE</p>
+                    <p class="eyebrow">BIENVENIDA A EMARIAJES</p>
 
                     <h1>
                         Hecho a mano,<br>
@@ -143,31 +191,14 @@
                 <div class="hero__image">
                 
                     <!-- Imagen principal del producto -->
-                    <img src="/images/hero/hero-mochila-destacada.png" alt="Bolso artesanal de Emariaje">                    
+                    <img src="/images/hero/hero-mochila-destacada.png" alt="Bolso artesanal de Emariajes">                    
                                     
-                </div>    
+                </div>
                 
                 <!-- ============================================================== 
                      Transición en S: fundido crema, resplandor y línea 
                      ==============================================================-->
 
-                <!-- Definiciones de gradientes (invisible, solo declara los <linearGradient>) -->
-                <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-                    <defs>
-                        <linearGradient id="heroLineFade" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="#a67c52" stop-opacity="0" />
-                            <stop offset="50%" stop-color="#a67c52" stop-opacity="1" />
-                            <stop offset="100%" stop-color="#a67c52" stop-opacity="0.0" />
-                        </linearGradient>
-                        
-                        <linearGradient id="heroLineGlowFade" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="#fff6e8" stop-opacity="0" />
-                            <stop offset="50%" stop-color="#fff6e8" stop-opacity="0.75" />
-                            <stop offset="100%" stop-color="#fff6e8" stop-opacity="0" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                
                 <svg class="hero__blend hero__blend--fade" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M -100, -100 L 56,-100 
                              C 49,110 49,120 56,230 
@@ -185,8 +216,7 @@
                 
                 <svg class="hero__blend hero__blend--line" viewBox="0 0 100 460" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M 56,0 C 49,110 49,120 56,230 C 63,340 63,350 56,460" />
-                </svg>
-
+                </svg>                
             </div>
         </section>
 
@@ -254,7 +284,7 @@
                         <span class="heading-line"></span>
                     </div>
 
-                    <a href="#productos" class="text-link">
+                    <a href="./productos/productos.html" class="text-link">
                         Ver todos los productos
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -267,7 +297,7 @@
                         <div class="product-card__image">
                             <img
                                 src="/images/products/mochilas/moc-005-alternativa.jpg"
-                                alt="Bolso Tradición artesanal"
+                                alt="Mochila Recamada En Perla"
                                 loading="lazy"
                             >
                         </div>
@@ -286,8 +316,8 @@
                                 <button
                                     class="cart-button"
                                     type="button"
-                                    aria-label="Agregar Bolso Tradición"
-                                    data-product="Bolso Tradición"
+                                    aria-label="Agregar Mochila Recamada En Perla"
+                                    data-product="Mochila Recamada En Perla"
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
@@ -301,7 +331,7 @@
                         <div class="product-card__image">
                             <img
                                 src="/images/products/mochilas/moc-003-alternativa.jpg"
-                                alt="Individual tejido artesanal"
+                                alt="Mochila En Tela Lentejuela"
                                 loading="lazy"
                             >
                         </div>
@@ -319,8 +349,8 @@
                                 <button
                                     class="cart-button"
                                     type="button"
-                                    aria-label="Agregar Individual Tejido"
-                                    data-product="Individual Tejido"
+                                    aria-label="Agregar Mochila En Tela Lentejuela"
+                                    data-product="Mochila En Tela Lentejuela"
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
@@ -334,7 +364,7 @@
                         <div class="product-card__image">
                             <img
                                 src="/images/products/mochilas/moc-002-alternativa.jpg"
-                                alt="Aretes Naturaleza artesanales"
+                                alt="Mochila Recamada En Perlas"
                                 loading="lazy"
                             >
                         </div>
@@ -352,8 +382,8 @@
                                 <button
                                     class="cart-button"
                                     type="button"
-                                    aria-label="Agregar Aretes Naturaleza"
-                                    data-product="Aretes Naturaleza"
+                                    aria-label="Agregar Mochila Recamada En Perlas"
+                                    data-product="Mochila Recamada En Perlas"
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
@@ -367,7 +397,7 @@
                         <div class="product-card__image">
                             <img
                                 src="/images/products/mochilas/moc-001-principal.jpg"
-                                alt="Caja decorativa artesanal"
+                                alt="Mochila Mariana"
                                 loading="lazy"
                             >
                         </div>
@@ -385,8 +415,8 @@
                                 <button
                                     class="cart-button"
                                     type="button"
-                                    aria-label="Agregar Caja Decorativa"
-                                    data-product="Caja Decorativa"
+                                    aria-label="Agregar Mochila Mariana"
+                                    data-product="Mochila Mariana"
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
@@ -405,8 +435,8 @@
         <section class="story" id="historia">
             <div class="story__image">
                 <img
-                    src="images/history/artesana-historia.png"
-                    alt="Artesana elaborando un producto de Emariaje"
+                    src="/images/history/artesana-historia.png"
+                    alt="Artesana elaborando un producto de Emariajes"
                     loading="lazy"
                 >
             </div>
@@ -417,7 +447,7 @@
                 <h2>Cada pieza tiene una historia.</h2>
 
                 <p>
-                    En Emariaje creemos que crear con las manos es una forma
+                    En Emariajes creemos que crear con las manos es una forma
                     de expresar nuestra identidad. Cada bolso, accesorio y
                     detalle para el hogar nace de un proceso artesanal
                     realizado con dedicación en Cascajal, Magangué, donde
@@ -447,22 +477,10 @@
                 >
             </div>
 
-            <svg class="story__divider" viewBox="0 0 100 800" preserveAspectRatio="none" aria-hidden="true">
-                <defs>
-                    <linearGradient id="storyFade" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="30" y2="0">
-                        <stop offset="0%" stop-color="#fbf6f1" stop-opacity="0" />
-                        <stop offset="100%" stop-color="#fbf6f1" stop-opacity="1" />
-                    </linearGradient>
-                </defs>
-            
-                <!-- Franja angosta junto a la curva: aquí SÍ hay degradado -->
-                <path class="story__divider-fade" d="M19.4,0 C25.4,136 25.4,264 19.4,400 C13.4,536 13.4,664 19.4,800 L30,800 L30,0 Z" />
-            
-                <!-- Resto del panel: rectángulo sólido, sin degradado -->
-                <path class="story__divider-solid" d="M30,0 L100,0 L100,800 L30,800 Z" />
-            
-                <!-- Línea decorativa: igual que antes -->
-                <path class="story__divider-line" d="M20,0 C26,136 26,264 20,400 C14,536 14,664 20,800" />
+            <svg class="divider" viewBox="0 0 100 800" preserveAspectRatio="none" aria-hidden="true">
+                <path class="divider-fade" d="M19.4,0 C25.4,136 25.4,264 19.4,400 C13.4,536 13.4,664 19.4,800 L30,800 L30,0 Z" />
+                <path class="divider-solid" d="M30,0 L100,0 L100,800 L30,800 Z" />
+                <path class="divider-line" d="M20,0 C26,136 26,264 20,400 C14,536 14,664 20,800" />
             </svg>
         </section>
 
@@ -568,7 +586,7 @@
         <section class="origin">
             <div class="origin__image">
                 <img
-                    src="images/origin/paisaje-cascajal.png"
+                    src="/images/origin/paisaje-cascajal.png"
                     alt="Paisaje de Cascajal, Magangué"
                     loading="lazy"
                 >
@@ -603,21 +621,11 @@
                 </div>
             </div>
             
-            <!-- NUEVO: divisor en forma de "S" -->
-            <svg class="origin__divider" viewBox="0 0 100 800" preserveAspectRatio="none" aria-hidden="true">
-                <defs>
-                    <linearGradient id="originFade" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="30" y2="0">
-                        <stop offset="0%" stop-color="#fbf6f1" stop-opacity="0" />
-                        <stop offset="100%" stop-color="#fbf6f1" stop-opacity="1" />
-                    </linearGradient>
-                </defs>
-            
-                <path class="origin__divider-fade"
-                    d="M19.4,0 C25.4,136 25.4,264 19.4,400 C13.4,536 13.4,664 19.4,800 L30,800 L30,0 Z" />
-            
-                <path class="origin__divider-solid" d="M30,0 L100,0 L100,800 L30,800 Z" />
-            
-                <path class="origin__divider-line" d="M20,0 C26,136 26,264 20,400 C14,536 14,664 20,800" />
+            <!-- Divisor unificado en S -->
+            <svg class="divider" viewBox="0 0 100 800" preserveAspectRatio="none" aria-hidden="true">
+                <path class="divider-fade" d="M19.4,0 C25.4,136 25.4,264 19.4,400 C13.4,536 13.4,664 19.4,800 L30,800 L30,0 Z" />
+                <path class="divider-solid" d="M30,0 L100,0 L100,800 L30,800 Z" />
+                <path class="divider-line" d="M20,0 C26,136 26,264 20,400 C14,536 14,664 20,800" />
             </svg>
         </section>
 
@@ -638,21 +646,21 @@
 
                     <article class="testimonial">
                         <img
-                            src="images/testimonials/cliente-testimonio-01.png"
+                            src="/images/testimonials/cliente-testimonio-01.png"
                             alt="Laura M."
                             loading="lazy"
                         >
 
                         <div>
                             <div class="stars">★★★★★</div>
-                            <p>“Me encantó mi bolso, se nota el trabajo y la calidad. ¡Gracias Emariaje!”</p>
+                            <p>“Me encantó mi bolso, se nota el trabajo y la calidad. ¡Gracias Emariajes!”</p>
                             <strong>Laura M.</strong>
                         </div>
                     </article>
 
                     <article class="testimonial">
                         <img
-                            src="images/testimonials/cliente-testimonio-02.png"
+                            src="/images/testimonials/cliente-testimonio-02.png"
                             alt="Sandra P."
                             loading="lazy"
                         >
@@ -666,7 +674,7 @@
 
                     <article class="testimonial">
                         <img
-                            src="images/testimonials/cliente-testimonio-03.png"
+                            src="/images/testimonials/cliente-testimonio-03.png"
                             alt="Camila R."
                             loading="lazy"
                         >
@@ -682,27 +690,10 @@
             </div>
         </section>
 
-
-        <!-- =====================================================
-             LLAMADO A LA ACCIÓN
-             ===================================================== -->
-
-        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-            <clipPath id="ctaBrushEdge" clipPathUnits="objectBoundingBox">
-                <path d="M0,0.06 C0.08,0.02 0.12,0.09 0.2,0.03 C0.28,0.1 0.34,0.01 0.42,0.05
-                         C0.5,0.01 0.58,0.09 0.66,0.02 C0.74,0.08 0.8,0.01 0.88,0.06
-                         C0.94,0.02 0.98,0.07 1,0.04
-                         L1,0.95
-                         C0.96,0.99 0.92,0.93 0.86,0.98 C0.8,0.92 0.72,0.99 0.64,0.95
-                         C0.56,0.99 0.48,0.92 0.4,0.98 C0.32,0.93 0.24,0.99 0.16,0.94
-                         C0.1,0.98 0.05,0.93 0,0.97 Z" />
-            </clipPath>
-        </svg>
-
         <section class="cta" id="contacto">
             <img class="cta__backdrop" src="/images/contact/fondo-cortina.png" alt="" aria-hidden="true">
 
-            <img class="cta__leaf cta__leaf--left" src="images/contact/rama-hojas-verde.png" alt="" aria-hidden="true">
+            <img class="cta__leaf cta__leaf--left" src="/images/contact/rama-hojas-verde.png" alt="" aria-hidden="true">
             <img class="cta__leaf cta__leaf--right" src="/images/contact/hojas-cafes.png" alt="" aria-hidden="true">
 
             <div class="container cta__content">
@@ -737,7 +728,7 @@
             <div class="footer__brand">
                 <a href="#inicio" class="logo">
                     <div class="logo__symbol">
-                        <img src="images/brand/logo-emariajes.png" alt="">
+                        <img src="/images/brand/logo-emariajes.png" alt="">
                     </div>
 
                     <div class="logo__text">
@@ -747,7 +738,7 @@
                 </a> 
                 
                 <p>
-                    Artesania que inspira vida. <br>
+                    Artesanía que inspira vida. <br>
                     Cascajal, Magangué
                 </p>
             </div>
@@ -757,7 +748,7 @@
             <div class="footer__links">
                 <h3>Explora</h3>
                 <a href="#inicio">Inicio</a>
-                <a href="#productos">Productos</a>
+                <a href="./productos/productos.html">Productos</a>
                 <a href="#historia">Nuestra historia</a>
                 <a href="#proceso">Proceso</a>
                 <a href="#contacto">Contacto</a>
@@ -781,7 +772,7 @@
                         <i class="fa-brands fa-tiktok"></i>
                     </a>
 
-                    <a href="#" aria-label="Pinterest">
+                    <a href="#" aria-label="YouTube">
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
@@ -811,7 +802,7 @@
 
                 <p>
                     <i class="fa-regular fa-envelope"></i>
-                    emariaje@gmail.com
+                    emariajes@gmail.com
                 </p>
             </div>
 
@@ -834,7 +825,7 @@
                     Todos los derechos reservados.
                 </p>
 
-                <p> Terminos y condiciones | Politicas de privacidad | Diseño por WebLink360</p>
+                <p> Términos y condiciones | Políticas de privacidad | Diseño por WebLink360</p>
             </div>
         </div>
     </footer>
@@ -846,13 +837,13 @@
         href="https://wa.me/573001234567?text=Hola%20Emariaje,%20quiero%20información."
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contactar a Emariaje por WhatsApp"
+        aria-label="Contactar a Emariajes por WhatsApp"
     >
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
 
-    <!-- JavaScript principal de Emariaje -->
+    <!-- JavaScript principal de Emariajes -->
     <script type="module" src="src/js/main.js"></script>
 
 </body>

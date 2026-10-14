@@ -1,0 +1,924 @@
+/* =========================================================
+   EMARIAJES — GALERÍA DE PRODUCTOS
+   Los estilos globales de marca se importan desde main.css.
+========================================================= */
+
+/* Estilos base del catálogo: colores y tipografía. */
+.catalog-page {
+  background: var(--color-white, #fff);
+  color: var(--color-dark, #292724);
+  font-family: var(--font-body, "Montserrat", sans-serif);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+/* Encabezado del catálogo y línea inferior. */
+.catalog-header {
+  position: relative;
+  z-index: 5;
+  background: var(--color-white, #fff);
+  border-bottom: 1px solid rgba(107, 70, 54, .08);
+}
+
+/* Distribución horizontal del logo, menú y acciones. */
+.catalog-header .header__inner {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Presentación del logotipo y nombre de la marca. */
+.catalog-header .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.catalog-header .logo__symbol {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+}
+
+.catalog-header .logo__symbol img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.catalog-header .logo__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalog-header .logo__text strong {
+  color: var(--color-brown, #6b4636);
+  font-family: var(--font-title, "Cormorant Garamond", serif);
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .05em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.catalog-header .logo__text small {
+  margin-top: 4px;
+  color: var(--color-terracotta, #b9684d);
+  font-size: .48rem;
+  letter-spacing: .22em;
+  white-space: nowrap;
+}
+
+/* Distribución de los enlaces de navegación. */
+.catalog-header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2.6vw, 38px);
+}
+
+.catalog-header .nav__link {
+  padding: 12px 0 10px;
+  border-bottom: 2px solid transparent;
+  color: var(--color-dark, #292724);
+  text-decoration: none;
+  font-size: .78rem;
+  white-space: nowrap;
+}
+
+.catalog-header .nav__link:hover,
+.catalog-header .nav__link.active {  
+  font-weight: 700;
+}
+
+/* Botones de búsqueda y carrito. */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header__icon,
+.header__cart {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--color-dark, #292724);
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+/* Indicador numérico de artículos en el carrito. */
+.cart__count {
+  position: absolute;
+  top: -9px;
+  right: -10px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 3px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-terracotta, #b9684d);
+  color: #fff;
+  font-size: .62rem;
+  font-weight: 700;
+}
+
+/* Formulario desplegable de búsqueda. */
+.catalog-search {
+  position: absolute;
+  right: 5%;
+  top: calc(100% + 8px);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 8px 28px #2927241c;
+  border-radius: 10px;
+}
+
+.catalog-search[hidden],
+.catalog-search-inline[hidden] {
+  display: none;
+}
+
+.catalog-search input,
+.catalog-search-inline input {
+  min-width: 230px;
+  padding: 10px 12px;
+  border: 1px solid #dfd2c9;
+  border-radius: 7px;
+  font: inherit;
+  font-size: .8rem;
+}
+
+.catalog-search button {
+  border: 0;
+  border-radius: 7px;
+  padding: 10px 12px;
+  background: var(--color-brown, #6b4636);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ==========================================
+   HERO DEL CATÁLOGO
+   ========================================== */
+
+.products-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #f2e5dc;
+}
+
+/* Fotografía ubicada a la derecha */
+.products-hero__image {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Transición suave entre el fondo y la fotografía */
+.products-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(242, 229, 220, 1) 0%,
+    rgba(242, 229, 220, 0.98) 25%,
+    rgba(242, 229, 220, 0.90) 38%,
+    rgba(242, 229, 220, 0.68) 48%,
+    rgba(242, 229, 220, 0.30) 60%,
+    rgba(242, 229, 220, 0.08) 72%,
+    rgba(242, 229, 220, 0) 82%
+  );
+}
+
+/* Contenido textual a la izquierda */
+.products-hero__content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, 90%);
+  margin: 0 auto;
+  padding: 28px 0;
+}
+
+/* Texto superior */
+.products-hero .eyebrow {
+  margin: 0 0 5px;
+  color: var(--color-terracotta, #b9684d);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+/* Título manuscrito */
+.products-hero h1 {
+  color: var(--color-brown, #6b4636);
+  font-family: "Allura", cursive;
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 400;
+  line-height: 0.6;
+  letter-spacing: 1px;
+}
+
+.products-hero h1 .initial-letter {
+  font-size: 1.8em;
+  display: inline;
+  margin-right: -0.12em;
+}
+
+/* Descripción */
+.products-hero__content > p:last-child {
+  max-width: 520px;
+  margin: 0;
+  color: #514b47;
+  font-family: var(--font-title, "Cormorant Garamond", serif);
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
+/* Contenedor principal de los productos. */
+.products-page {
+  padding: 14px 0 34px;
+  background: var(--color-white, #fff);
+}
+
+.products-page>.container {
+  width: min(1150px, 90%);
+  margin-inline: auto;
+}
+
+/* Ruta que indica la ubicación dentro del sitio. */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 16px;
+  color: #77716d;
+  font-size: .66rem;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb i {
+  color: var(--color-terracotta, #b9684d);
+  font-size: .55rem;
+}
+
+.breadcrumb strong {
+  color: var(--color-brown, #6b4636);
+}
+
+/* Distribución en dos columnas: filtros y productos. */
+.products-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+/* Panel lateral de filtros. */
+.products-sidebar {
+  padding: 18px 15px;
+  border-radius: 15px;
+  background: #faf8f5;
+}
+
+/* Separación visual entre grupos de filtros. */
+.filter-block+.filter-block {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e7ded7;
+}
+
+.filter-block h2 {
+  margin: 0 0 12px;
+  color: var(--color-dark, #292724);
+  font-family: var(--font-body, "Montserrat", sans-serif);
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+/* Botones para filtrar por categoría. */
+.category-filter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #4d4845;
+  font: inherit;
+  font-size: .67rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.category-filter__label {
+  min-width: 0;
+}
+
+.category-filter .filter-count {
+  margin-left: auto;
+  color: #8b817b;
+  white-space: nowrap;
+}
+
+.category-filter:hover,
+.category-filter.active {
+  background: #f1dfd5;
+  color: var(--color-terracotta, #b9684d);
+}
+
+.category-filter i {
+  width: 14px;
+  text-align: center;
+}
+
+/* Contenedores de precio, color y disponibilidad. */
+.filter-group {
+  padding: 13px 0;
+  border-bottom: 1px solid #e7ded7;
+}
+
+.filter-group__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 11px;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.filter-group__title i {
+  font-size: .6rem;
+}
+
+/* Controles para definir el rango de precios. */
+.price-range {
+  display: grid;
+  gap: 2px;
+}
+
+.price-range input {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--color-terracotta, #b9684d);
+  cursor: pointer;
+}
+
+.price-values {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 7px;
+  color: #716a66;
+  font-size: .62rem;
+}
+
+/* Opciones de filtrado por color. */
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.color-option {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.color-option[aria-pressed="true"] {
+  outline: 2px solid var(--color-terracotta, #b9684d);
+  outline-offset: 2px;
+}
+
+.color-option--beige {
+  background: #e5d4c2;
+}
+
+.color-option--pink {
+  background: #df8fa8;
+}
+
+.color-option--blue {
+  background: #3784e7;
+}
+
+.color-option--black {
+  background: #171717;
+}
+
+.color-option--brown {
+  background: #925537;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #716a66;
+  font-size: .67rem;
+  cursor: pointer;
+}
+
+.availability input {
+  accent-color: var(--color-terracotta, #b9684d);
+}
+
+/* Botón para restablecer los filtros. */
+.clear-filters {
+  width: 100%;
+  margin-top: 16px;
+  padding: 9px;
+  border: 1px solid var(--color-terracotta, #b9684d);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-terracotta, #b9684d);
+  font: 600 .68rem var(--font-body, "Montserrat", sans-serif);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.clear-filters:hover {
+  background: var(--color-terracotta, #b9684d);
+  color: #fff;
+}
+
+.catalog-search-inline {
+  margin-bottom: 14px;
+}
+
+.catalog-search-inline label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: .72rem;
+  font-weight: 600;
+}
+
+/* Controles de conteo, ordenamiento y visualización. */
+.products-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.products-count {
+  margin: 0;
+  color: #706964;
+  font-size: .69rem;
+}
+
+.products-count strong {
+  color: var(--color-dark, #292724);
+}
+
+.products-toolbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-select {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  background: #faf8f5;
+  color: #5f5853;
+  font-size: .65rem;
+  white-space: nowrap;
+}
+
+.sort-select select {
+  max-width: 150px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-dark, #292724);
+  font: 600 .65rem var(--font-body, "Montserrat", sans-serif);
+  cursor: pointer;
+}
+
+.view-buttons {
+  display: flex;
+  gap: 3px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.view-button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 7px;
+  background: #faf8f5;
+  color: #716a66;
+  cursor: pointer;
+}
+
+.view-button.active {
+  background: var(--color-terracotta, #b9684d);
+  color: #fff;
+}
+
+/* ============================================================
+   Galerias-Fotos
+   ============================================================ */
+
+/* Cuadrícula de tarjetas del catálogo. */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px 15px;
+}
+
+/* Tarjeta individual de cada mochila. */
+.product-card {
+  min-width: 0;  
+}
+
+/* Marco de imagen de cada producto. */
+.product-card__image {
+  position: relative;
+  width: 100%;
+  height: auto;            /* anula el height: 210px / 260px de main.css */
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #f4eee9;
+}
+
+/* El enlace llena toda la caja, así la imagen siempre queda centrada */
+.product-card__image > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .4s ease;
+}
+
+.product-card:hover .product-card__image img {
+  transform: scale(1.035);
+}
+
+/* Botón para marcar un producto como favorito. */
+.product-card__favorite {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .94);
+  color: var(--color-brown, #6b4636);
+  box-shadow: 0 3px 10px #00000010;
+  cursor: pointer;
+}
+
+.product-card__favorite[aria-pressed="true"] {
+  color: var(--color-terracotta, #b9684d);
+}
+
+.product-card__body {
+  padding: 8px 2px 0;
+}
+
+.product-card__body h3 {
+  margin: 0 0 5px;
+  color: var(--color-dark, #292724);
+  font-size: .72rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.product-card__body p {
+  min-height: 42px;
+  margin: 0 0 7px;
+  color: #716a66;
+  font-size: .63rem;
+  line-height: 1.4;
+}
+
+.product-card__price {
+  display: block;
+  min-height: 18px;
+  margin-bottom: 8px;
+  color: var(--color-brown, #6b4636);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+/* Botón de acción de la tarjeta. */
+.product-card__button {
+  width: 100%;
+  min-height: 32px;
+  padding: 7px 5px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--color-brown, #6b4636);
+  color: #fff;
+  font: 600 .61rem var(--font-body, "Montserrat", sans-serif);
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.product-card__button:hover {
+  background: var(--color-terracotta, #b9684d);
+  transform: translateY(-1px);
+}
+
+.product-card__button i {
+  margin-right: 4px;
+}
+
+/* Mensaje mostrado cuando no hay coincidencias. */
+.empty-products {
+  padding: 35px 10px;
+  text-align: center;
+  color: #716a66;
+  font-size: .85rem;
+}
+
+/* Modificadores para mostrar los productos en lista. */
+.products-grid--list {
+  grid-template-columns: 1fr;
+}
+
+.products-grid--list .product-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee4de;
+}
+
+.products-grid--list .product-card__image {
+  grid-row: 1;
+}
+
+.products-grid--list .product-card__body {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0;
+}
+
+.products-grid--list .product-card__body p {
+  min-height: 0;
+}
+
+.products-grid--list .product-card__favorite {
+  z-index: 1;
+}
+
+/* Navegación entre páginas del catálogo. */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 24px;
+}
+
+.pagination button {
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: #faf8f5;
+  color: var(--color-dark, #292724);
+  font: .7rem var(--font-body, "Montserrat", sans-serif);
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: var(--color-terracotta, #b9684d);
+  color: #fff;
+}
+
+.pagination button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+/* Sección final con llamado a la acción. */
+.products-cta {
+  padding: 18px 0;
+}
+
+.products-cta__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 64px;
+  padding: 10px 22px;
+  border-radius: 16px;
+  background: #f2dfd6;
+}
+
+.products-cta__ornament {
+  color: var(--color-terracotta, #b9684d);
+  font-size: 1.6rem;
+}
+
+.products-cta h2 {
+  margin: 0 auto 0 0;
+  color: var(--color-brown, #6b4636);
+  font-family: var(--font-title, "Cormorant Garamond", serif);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+}
+
+.products-cta .button {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+/* Pantallas grandes: amplía el contenedor y los espacios. */
+@media (min-width:1500px) {
+  .products-page>.container {
+    width: min(1320px, 92%);
+  }
+
+  .products-layout {
+    grid-template-columns: 245px minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .products-grid {
+    gap: 22px 18px;
+  }
+}
+
+/* Tabletas y portátiles: reduce columnas y espacios. */
+@media (max-width:1150px) {
+  .catalog-header .nav {
+    gap: 15px;
+  }
+
+  .products-layout {
+    grid-template-columns: 205px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Pantallas medianas: reorganiza encabezado y filtros. */
+@media (max-width:850px) {
+  .catalog-header .header__inner {
+    flex-wrap: wrap;
+    padding-block: 10px;
+  }
+
+  .catalog-header .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .products-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .products-sidebar {
+    position: static;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Móviles: ajusta navegación, controles y cuadrícula. */
+@media (max-width:600px) {
+  .catalog-header .nav {
+    gap: 12px;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .catalog-header .nav__link {
+    font-size: .7rem;
+  }
+
+  .products-hero {
+    min-height: 185px;
+  }
+
+  .products-hero__content {
+    width: 88%;
+  }
+
+  .products-hero h1 {
+    font-size: 2.65rem;
+  }
+
+  .products-hero__content>p:last-child {
+    max-width: 350px;
+    font-size: .95rem;
+  }
+
+  .products-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .products-toolbar__actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 12px;
+  }
+
+  .products-cta__content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .products-cta h2 {
+    margin: 0;
+  }
+}
+
+/* Móviles muy estrechos: una tarjeta por fila. */
+@media (max-width:370px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid--list .product-card {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 10px;
+  }
+}

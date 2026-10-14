@@ -26,9 +26,17 @@
     --color-terracotta: #B9684D;
     --color-beige: #E8D8BD;
     --color-cream: #FAF7F0;
-    --color-sage: #697052;
     --color-dark: #292724;
     --color-white: #FFFFFF;
+
+    /* Nuevas variables factorizadas */
+    --color-sand: #f4e7df;        /* fondo historia y origen */
+    --color-blush: #fbf6f1;       /* paneles decorativos */
+    --color-hero-bg: #f2e5dc;
+    --color-rose: #efd9ce;        /* círculos de beneficios y proceso */
+    --color-line: #e4cbc0;        /* bordes suaves */
+    --color-cta: #9a6861;
+    --color-brown-dark: #523429;  /* hover de botones */
 
     --font-title: "Cormorant Garamond", Georgia, serif;
     --font-body: "Montserrat", Arial, sans-serif;
@@ -38,7 +46,6 @@
 
     --radius-small: 8px;
     --radius-medium: 14px;
-    --radius-large: 24px;
 
     --shadow-soft: 0 8px 30px rgba(41, 39, 36, 0.08);
 
@@ -173,16 +180,6 @@ h2 {
     color: var(--color-white);
 }
 
-/* Botón para WhatsApp. */
-.button--whatsapp {
-    background-color: var(--color-brown);
-    color: var(--color-white);
-}
-
-.button--whatsapp:hover {
-    background-color: #523429;
-}
-
 /* Botón claro usado en el CTA inferior. */
 .button--light {
     background-color: var(--color-cream);
@@ -203,6 +200,12 @@ h2 {
     font-size: 2.1em;
 }
 
+.svg-defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
 
 /* ============================================================
    4. HEADER
@@ -250,12 +253,7 @@ h2 {
 
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    position: relative;
-
-    /* Eliminamos el antiguo borde del logo */
-    border: none;
+    justify-content: center;   
 }
 
 /* Imagen real del logo de EMARIAJE */
@@ -266,12 +264,6 @@ h2 {
     display: block;
 
     object-fit: contain;
-}
-
-/* Ya no necesitamos el círculo decorativo
-   porque el círculo forma parte del logo original. */
-.logo__symbol::after {
-    display: none;
 }
 
 /* Texto del logotipo */
@@ -301,7 +293,7 @@ h2 {
 .logo__text small {
     color: var(--color-terracotta);
 
-    font-size: 0.42rem;
+    font-size: 0.48rem;
     font-weight: 600;
 
     letter-spacing: 0.30em;
@@ -705,6 +697,40 @@ h2 {
     margin-left: 5px;
 }
 
+/* Configuración de posición para cada sección */
+.story  { --divider-left: 75%; }
+.origin { --divider-left: 74%; }
+
+/* Divisor unificado */
+.divider {
+    position: absolute;
+    top: 0;
+    left: var(--divider-left);
+    width: calc(100% - var(--divider-left));
+    height: 100%;
+    overflow: visible;
+    shape-rendering: geometricPrecision;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.divider-fade { 
+    fill: url(#dividerFade); 
+    stroke: none; 
+}
+
+.divider-solid { 
+    fill: var(--color-blush); 
+    stroke: none; 
+}
+
+.divider-line { 
+    fill: none; 
+    stroke: var(--color-brown); 
+    stroke-width: 0.1px; 
+    stroke-linecap: round; 
+    vector-effect: non-scaling-stroke; 
+}
 
 /* ============================================================
    8. TARJETAS DE PRODUCTOS
@@ -891,42 +917,8 @@ h2 {
    ============================================================ */
 
 .story__panel {
-     position: relative;
+    position: relative;
     overflow: hidden;
-}
-
-/* El divisor "muerde" el panel con el color de fondo de .story,
-   creando la curva en forma de S en el borde izquierdo */
-.story__divider {
-    position: absolute;
-    top: 0;
-    left: 75%;   /* en vez de 80% + width:40px + translateX(-50%) */
-    width: 25%;    /* llega hasta el borde derecho real de .story */
-    height: 100%;
-
-    overflow: visible; /* deja que el brillo se salga un poco del svg */
-    shape-rendering: geometricPrecision; /*reduce artefactos de redondeo en curvas */
-
-    z-index: 1;  /* debajo de .story__decoration (3) y .story__branch (2) */
-    pointer-events: none;
-}
-
-.story__divider-fade {
-    fill: url(#storyFade);
-    stroke: none;
-}
-
-.story__divider-solid {
-    fill: #fbf6f1;
-    stroke: none;
-}
-
-.story__divider-line {
-    fill: none;
-    stroke: var(--color-brown);
-    stroke-width: 0.1px;      /*reales en pantalla, no unidades del viewBox */
-    stroke-linecap: round;
-    vector-effect: non-scaling-stroke;
 }
 
 .story__decoration {
@@ -1121,13 +1113,7 @@ h2 {
 .origin__image {
     min-height: 300px;
 
-    position: relative;
-
-    /* Permitimos que el difuminado sobresalga hacia el contenido
-    overflow: visible;*/
-
-    /* La transición queda por encima de la fotografía 
-    z-index: 2;*/
+    position: relative;   
 }
 
 /* ============================================================
@@ -1231,38 +1217,6 @@ h2 {
     justify-content: center;
 
     min-height: 300px;
-}
-
-.origin__divider {
-    position: absolute;
-    top: 0;
-    left: 74%;   /* 43% + 35% = límite entre .origin__content y .origin__panel */
-    width: 26%;
-    height: 100%;
-
-    overflow: visible;
-    shape-rendering: geometricPrecision;
-
-    z-index: 1;
-    pointer-events: none;
-}
-
-.origin__divider-fade {
-    fill: url(#originFade);
-    stroke: none;
-}
-
-.origin__divider-solid {
-    fill: #fbf6f1;
-    stroke: none;
-}
-
-.origin__divider-line {
-    fill: none;
-    stroke: var(--color-brown);
-    stroke-width: 0.1px;
-    stroke-linecap: round;
-    vector-effect: non-scaling-stroke;
 }
 
 .origin__phrase::after {
@@ -1451,8 +1405,6 @@ h2 {
 
 .footer__brand p {
     margin-top: 15px;
-
-    /*color: var(--color-brown);*/
     font-family: var(--font-body);
     font-size: 1rem;
 }
@@ -1666,14 +1618,7 @@ h2 {
     .nav {
         gap: 18px;
     }
-
-    .hero,
-    .hero__content,
-    .hero__image {
-        height: 460px;
-        min-height: 460px;
-    }
-
+    
     .hero__image img {
         object-position: 60% center; /* encuadra el bolso; mueve el 65% si lo quieres más a un lado */
     }
@@ -1722,9 +1667,8 @@ h2 {
         display: none;
     }
 
-    .story__divider,
-    .origin__divider {
-        display: none; /* la curva en S dependía de las 3 columnas exactas */
+   .divider {
+        display: none;
     }
 
     .process__leaves {
@@ -1735,12 +1679,7 @@ h2 {
         display: none;        
     }
 
-    .story__decoration,
-    .origin__phrase {
-        opacity: 0.55;
-    }
-
-    .process__grid {
+   .process__grid {
         grid-template-columns: repeat(5, 1fr);
         gap: 4px;
     }
@@ -1877,12 +1816,6 @@ h2 {
     .hero__buttons .button {
         width: 100%; /* mismo ancho que el párrafo, que ya ocupa toda la columna */
     }
-
-    .hero__phrase {
-        top: 30px;
-        right: 15px;
-        font-size: 1.4rem;
-    }
     
     /* Beneficios */
     .benefits__grid {
@@ -1896,8 +1829,7 @@ h2 {
         padding: 26px 0;
     }
 
-    .section-heading,
-    .section-heading--products {
+    .section-heading {
         align-items: flex-start;
         flex-direction: column;
         gap: 12px;
@@ -1942,34 +1874,10 @@ h2 {
         width: 100%;
     }
 
-    .story__decoration,
-    .origin__phrase {
-        position: static;
-
-        margin-top: 35px;
-
-        transform: none;
-        opacity: 1;
-    }
-
-    /* Panel decorativo de Historia/Origen: le damos espacio propio */
-    .story__panel,
-    .origin__panel {
-        min-height: 220px;
-        padding: 30px 6%;
-    }
-
-    .story__panel {
+    .origin__image::after {
         display: none;
     }
-
-    .story__branch {
-        position: static;
-        width: 160px;
-        margin: 20px auto 0;
-        opacity: 0.6;
-    }  
-    
+       
     /* Proceso */
     .process__grid {
         grid-template-columns: 1fr;
@@ -2003,14 +1911,7 @@ h2 {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
-    /* El desplazamiento manual de la frase del footer era para escritorio */
-    .footer__phrase {
-        left: 0;
-        top: 0;
-        margin-top: 10px;
-    }
-
+    
     .footer__bottom .container {
         flex-direction: column;
         justify-content: center;
