@@ -1,6 +1,8 @@
 import "../../css/main.css";
 import "../../css/pages/productos.css";
 import { products } from "./productos-data.js";
+import { addToCart } from "../components/carrito.js";
+import { initCartUI } from "../components/carrito-ui.js";
 
 const BASE = import.meta.env.BASE_URL;
 const IMAGE_ROOT = `${BASE}images/products/mochilas/`;
@@ -283,9 +285,17 @@ grid.addEventListener("click", (event) => {
 
   const addButton = event.target.closest("[data-add]");
   if (addButton) {
-    // El carrito se implementará en una fase posterior. No simulamos una compra todavía.
-    alert("El carrito de compras se conectará en la siguiente etapa del proyecto.");
+     const productId = addButton.dataset.add;
+
+     const product = products.find(
+        (item) => item.id === productId
+     );
+
+     if (product) {
+        addToCart(product);
+     }
   }
 });
 
 render();
+initCartUI();
