@@ -12,8 +12,96 @@
 
 const STORAGE_KEY = "emariajes-carrito";
 
+// Estilos de las notificaciones de la tienda.
+import "../../css/components/notificaciones.css";
+
 // Ruta base para GitHub Pages y Netlify.
 const BASE = import.meta.env.BASE_URL;
+
+
+/* ============================================================
+   NOTIFICACIONES VISUALES DE EMARIAJES
+   ============================================================ */
+
+let notificationTimer;
+
+function showCartNotification(message, type = "success") {
+  // Crear el contenedor solo una vez.
+  let container = document.querySelector("#notificationContainer");
+
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "notificationContainer";
+    container.className = "notification-container";
+    container.setAttribute("aria-live", "polite");
+    container.setAttribute("aria-atomic", "false");
+    document.body.appendChild(container);
+  }
+
+  // Crear la notificación.
+  const notification = document.createElement("div");
+  notification.className = `notification ${
+    type === "error" ? "notification--error" : ""
+  }`;
+
+  const icon = document.createElement("span");
+  icon.className = "notification__icon";
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = type === "error" ? "!" : "✓";
+
+  const content = document.createElement("div");
+  content.className = "notification__content";
+
+  const title = document.createElement("p");
+  title.className = "notification__title";
+  title.textContent =
+    type === "error" ? "No se pudo completar" : "¡Producto agregado!";
+
+  const messageText = document.createElement("p");
+  messageText.className = "notification__message";
+  messageText.textContent = message;
+
+  content.append(title, messageText);
+
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "notification__close";
+  closeButton.setAttribute("aria-label", "Cerrar notificación");
+  closeButton.textContent = "×";
+
+  notification.append(icon, content, closeButton);
+  container.appendChild(notification);
+
+  // Permitir cerrar la notificación manualmente.
+  closeButton.addEventListener("click", () => {
+    dismissNotification(notification);
+  });
+
+  // Mostrar la notificación con la animación CSS.
+  requestAnimationFrame(() => {
+    notification.classList.add("is-visible");
+  });
+
+  // Las notificaciones anteriores siguen siendo visibles
+  // si el usuario agrega varios productos rápidamente.
+  notificationTimer = window.setTimeout(() => {
+    dismissNotification(notification);
+  }, 4500);
+}
+
+function dismissNotification(notification) {
+  notification.classList.remove("is-visible");
+
+  window.setTimeout(() => {
+    notification.remove();
+
+    const container = document.querySelector("#notificationContainer");
+
+    if (container && container.children.length === 0) {
+      container.remove();
+    }
+  }, 250);
+}
 
 // Obtener el carrito guardado.
 export function getCart() {
@@ -44,16 +132,6 @@ export function addToCart(product) {
     return false;
   }
 
-  if (!product.available) {
-    alert("Esta mochila no está disponible actualmente.");
-    return false;
-  }
-
-  if (!Number.isFinite(product.price) || product.price <= 0) {
-    alert("El precio de esta mochila está pendiente.");
-    return false;
-  }
-
   const cart = getCart();
 
   const existingProduct = cart.find(
@@ -74,7 +152,9 @@ export function addToCart(product) {
 
   saveCart(cart);
 
-  alert(`${product.name} se agregó al carrito.`);
+  showCartNotification(
+  `${product.name} se agregó correctamente a tu carrito.`
+  );
 
   return true;
 }

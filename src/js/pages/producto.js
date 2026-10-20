@@ -25,6 +25,10 @@ import "../../css/pages/producto.css";
 // Catálogo compartido con la página de productos.
 import { products } from "./productos-data.js";
 
+import { addToCart } from "../components/carrito.js";
+
+import { initCartUI } from "../components/carrito-ui.js";
+
 
 /* ============================================================
    2. CONFIGURACIÓN DE RUTAS
@@ -60,6 +64,9 @@ const productPrice = document.querySelector("#productPrice");
 // Descripción de la mochila.
 const productDescription = document.querySelector("#productDescription");
 
+// Botón para agregar la mochila al carrito.
+const addToCartButton = document.querySelector("#addToCartButton");
+
 // Nombre del producto en la ruta de navegación.
 const productBreadcrumb = document.querySelector("#productBreadcrumb");
 
@@ -72,6 +79,43 @@ const nextButton = document.querySelector("#nextImage");
 
 // Contenedor del mensaje de producto no encontrado.
 const notFoundMessage = document.querySelector("#productNotFound");
+
+
+// Elementos de búsqueda del encabezado.
+const searchToggle = document.querySelector("#searchToggle");
+const searchForm = document.querySelector("#detailSearchForm");
+const searchInput = document.querySelector("#detailSearchInput");
+
+// Mostrar u ocultar el buscador.
+searchToggle?.addEventListener("click", () => {
+  searchForm.hidden = !searchForm.hidden;
+  searchToggle.setAttribute("aria-expanded", String(!searchForm.hidden));
+
+  if (!searchForm.hidden) {
+    searchInput.focus();
+  }
+});
+
+// Buscar en el catálogo.
+searchForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const query = searchInput.value.trim();
+
+  if (!query) {
+    searchInput.focus();
+    return;
+  }
+
+  const catalogUrl = new URL(
+    "./productos/productos.html",
+    window.location.href
+  );
+
+  catalogUrl.searchParams.set("q", query);
+
+  window.location.href = catalogUrl.href;
+});
 
 
 /* ============================================================
@@ -385,10 +429,34 @@ function initializeProductPage() {
 
 }
 
-
 // Ejecuta la inicialización de la página.
 initializeProductPage();
 
+// Inicializar el panel del carrito en la página de detalle.
+initCartUI();
+
+
+/* ============================================================
+   12. AGREGAR EL PRODUCTO AL CARRITO
+   ============================================================ */
+
+// Comprueba que el botón exista en la página.
+if (addToCartButton) {
+
+  // Detecta cuando el cliente hace clic.
+  addToCartButton.addEventListener("click", () => {
+
+    // Comprueba que exista una mochila seleccionada.
+    if (currentProduct) {
+
+      // Agrega la mochila al carrito existente.
+      addToCart(currentProduct);
+
+    }
+
+  });
+
+}
 
 /* ============================================================
    FIN DEL ARCHIVO

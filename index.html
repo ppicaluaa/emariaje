@@ -139,6 +139,19 @@
                 <i class="fa-brands fa-whatsapp"></i>
                 Comprar por WhatsApp
             </a>
+
+            
+            <!-- Carrito de compras -->
+            <button
+                class="header__cart"
+                type="button"
+                aria-label="Abrir carrito de compras"
+                aria-controls="cartDrawer"
+                aria-expanded="false"
+            >
+                <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                <span class="cart__count" id="cartCount" aria-live="polite">0</span>
+            </button>
         </div>
     </header>
 
@@ -295,11 +308,16 @@
                     <!-- Producto 1 -->
                     <article class="product-card">
                         <div class="product-card__image">
-                            <img
-                                src="/images/products/mochilas/moc-005-alternativa.jpg"
-                                alt="Mochila Recamada En Perla"
-                                loading="lazy"
+                            <a 
+                                href="./producto.html?id=moc-005"
+                                aria-label="Ver fotografías de Mochila Recamada En Perla"
                             >
+                                <img
+                                    src="/images/products/mochilas/moc-005-alternativa.jpg"
+                                    alt="Mochila Recamada En Perla"
+                                    loading="lazy"
+                                >
+                            </a>
                         </div>
 
                         <div class="product-card__body">
@@ -308,6 +326,7 @@
                             <p>
                                 Diseño artesanal recamado con perlas y 
                                 delicados detalles que realzan su elegancia.
+                                Un toque de distinción único.
                             </p>
 
                             <div class="product-card__footer">
@@ -317,7 +336,7 @@
                                     class="cart-button"
                                     type="button"
                                     aria-label="Agregar Mochila Recamada En Perla"
-                                    data-product="Mochila Recamada En Perla"
+                                    data-product-id="moc-005"
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
@@ -329,11 +348,16 @@
                     <!-- Producto 2 -->
                     <article class="product-card">
                         <div class="product-card__image">
-                            <img
-                                src="/images/products/mochilas/moc-003-alternativa.jpg"
-                                alt="Mochila En Tela Lentejuela"
-                                loading="lazy"
+                            <a 
+                                href="./producto.html?id=moc-003"
+                                aria-label="Ver fotografías de Mochila En Tela Lentejuela"
                             >
+                                <img
+                                    src="/images/products/mochilas/moc-003-alternativa.jpg"
+                                    alt="Mochila En Tela Lentejuela"
+                                    loading="lazy"
+                                >
+                            </a>
                         </div>
 
                         <div class="product-card__body">
@@ -350,7 +374,7 @@
                                     class="cart-button"
                                     type="button"
                                     aria-label="Agregar Mochila En Tela Lentejuela"
-                                    data-product="Mochila En Tela Lentejuela"
+                                    data-product-id="moc-003"
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
@@ -362,11 +386,16 @@
                     <!-- Producto 3 -->
                     <article class="product-card">
                         <div class="product-card__image">
-                            <img
-                                src="/images/products/mochilas/moc-002-alternativa.jpg"
-                                alt="Mochila Recamada En Perlas"
-                                loading="lazy"
+                            <a 
+                                href="./producto.html?id=moc-002"
+                                aria-label="Ver fotografías de Mochila Recamada En Perlas"
                             >
+                                <img
+                                    src="/images/products/mochilas/moc-002-alternativa.jpg"
+                                    alt="Mochila Recamada En Perlas"
+                                    loading="lazy"
+                                >
+                            </a>
                         </div>
 
                         <div class="product-card__body">
@@ -383,7 +412,7 @@
                                     class="cart-button"
                                     type="button"
                                     aria-label="Agregar Mochila Recamada En Perlas"
-                                    data-product="Mochila Recamada En Perlas"
+                                    data-product-id="moc-002"
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
@@ -395,11 +424,16 @@
                     <!-- Producto 4 -->
                     <article class="product-card">
                         <div class="product-card__image">
-                            <img
-                                src="/images/products/mochilas/moc-001-principal.jpg"
-                                alt="Mochila Mariana"
-                                loading="lazy"
+                            <a 
+                                href="./producto.html?id=moc-001"
+                                aria-label="Ver fotografías de Mochila Mariana"
                             >
+                                <img
+                                    src="/images/products/mochilas/moc-001-principal.jpg"
+                                    alt="Mochila Mariana"
+                                    loading="lazy"
+                                >
+                            </a>
                         </div>
 
                         <div class="product-card__body">
@@ -416,7 +450,7 @@
                                     class="cart-button"
                                     type="button"
                                     aria-label="Agregar Mochila Mariana"
-                                    data-product="Mochila Mariana"
+                                    data-product-id="moc-001"
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>

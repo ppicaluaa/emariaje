@@ -1,4 +1,8 @@
 import "../css/main.css";
+import { products } from "./pages/productos-data.js";
+import { addToCart } from "./components/carrito.js";
+import { initCartUI } from "./components/carrito-ui.js";
+
 
 /* ============================================================
    EMARIAJE - JAVASCRIPT PRINCIPAL
@@ -10,6 +14,13 @@ import "../css/main.css";
    4. Año automático en el footer.
    5. Interacción inicial de los botones de productos.
    ============================================================ */
+
+
+/* ============================================================
+   INICIALIZAR CARRITO DE COMPRAS
+   ============================================================ */
+
+initCartUI();
 
 
 /* ============================================================
@@ -124,24 +135,32 @@ if (currentYear) {
 }
 
 
+
 /* ============================================================
-   5. INTERACCIÓN DE LOS BOTONES DE PRODUCTOS
+   5. AGREGAR PRODUCTOS DESTACADOS AL CARRITO
    ============================================================ */
 
-const cartButtons = document.querySelectorAll(".cart-button");
+const cartButtons = document.querySelectorAll("[data-product-id]");
 
 cartButtons.forEach((button) => {
-
     button.addEventListener("click", () => {
+        const productId = button.dataset.productId;
 
-        const productName = button.dataset.product;
-
-        alert(
-            `${productName} seleccionado. Próximamente conectaremos este botón con el proceso de compra.`
+        const product = products.find(
+            (item) => item.id === productId
         );
-    });
 
+        if (!product) {
+            console.error(
+                `No se encontró el producto con ID: ${productId}`
+            );
+            return;
+        }
+
+        addToCart(product);
+    });
 });
+
 
 
 /* ============================================================

@@ -366,6 +366,56 @@ h2 {
     cursor: pointer;
 }
 
+/* ============================================================
+   CARRITO EN EL HEADER (un solo estilo para todas las páginas)
+   ============================================================ */
+
+.header__cart {
+    position: relative;
+    flex: 0 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    width: 28px;
+    height: 36px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+    color: var(--color-dark);
+
+    font-size: 1.15rem;
+    cursor: pointer;
+
+    transition: color var(--transition);
+}
+
+.header__cart:hover {
+    color: var(--color-terracotta);
+}
+
+.header__cart .cart__count {
+    position: absolute;
+    top: -3px;
+    right: -9px;
+
+    display: grid;
+    place-items: center;
+
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+
+    border-radius: 999px;
+    background-color: var(--color-terracotta);
+    color: var(--color-white);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
 
 /* ============================================================
    5. HERO
@@ -1929,6 +1979,34 @@ h2 {
 
 
 /* ============================================================
+   CORRECCIÓN: BOTONES DE PRODUCTOS DESTACADOS
+   Evita que hereden el ancho de los botones del carrito lateral.
+   ============================================================ */
+
+.section--products .product-card__footer .cart-button {
+    width: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.section--products .product-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.section--products .product-card__footer > strong {
+    flex-shrink: 0;
+}
+
+/* ============================================================
    18. ACCESIBILIDAD
    ============================================================ */
 
@@ -1943,7 +2021,6 @@ button:focus-visible {
     outline: 3px solid rgba(185, 104, 77, 0.45);
     outline-offset: 3px;
 }
-
 
 /* ============================================================
    FIN DEL ARCHIVO CSS

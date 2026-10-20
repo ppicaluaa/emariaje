@@ -10,8 +10,8 @@ export const products = [
     name: "Mochila Mariana",
     description: "Una pieza artesanal inspirada en la devoción mariana, donde la fe y la tradición se unen en un diseño lleno de significado.",
     price: 160000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "religiosa", // recamadas | tela | lentejuela | religiosa
-    color: "beige", // beige | rosado | azul | negro | marron
+    category: "religiosa", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "blanco", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-001-principal.jpg",
@@ -24,8 +24,8 @@ export const products = [
     name: "Mochila Recamada En Perlas",
     description: "Diseño artesanal recamado con perlas y detalles bordados que hacen de cada pieza una creación única.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "recamadas", // recamadas | tela | lentejuela | religiosa
-    color: "rosado", // beige | rosado | azul | negro | marron
+    category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "rosado", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-002-principal.jpg",
@@ -38,8 +38,8 @@ export const products = [
     name: "Mochila En Tela Lentejuela",
     description: "Diseño artesanal en tela con lentejuelas, perfecto para destacar con elegancia y personalidad.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "lentejuela", // recamadas | tela | lentejuela | religiosa
-    color: "beige", // beige | rosado | azul | negro | marron
+    category: "lentejuela", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-003-principal.jpg",
@@ -52,8 +52,8 @@ export const products = [
     name: "Mochila Recamada En Perla",
     description: "Diseño artesanal recamado con perlas y delicados detalles que realzan su elegancia.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "recamadas", // recamadas | tela | lentejuela | religiosa
-    color: "beige", // beige | rosado | azul | negro | marron
+    category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-004-principal.jpg",
@@ -66,8 +66,8 @@ export const products = [
     name: "Mochila Recamada En Perla",
     description: "Diseño artesanal recamado con perlas y delicados detalles que realzan su elegancia.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "recamadas", // recamadas | tela | lentejuela | religiosa
-    color: "marron", // beige | rosado | azul | negro | marron
+    category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "marron", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-005-principal.jpg",
@@ -80,8 +80,8 @@ export const products = [
     name: "Mochila Recamada En Perla",
     description: "Diseño artesanal recamado con perlas y delicados detalles que realzan su elegancia.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "recamadas", // recamadas | tela | lentejuela | religiosa
-    color: "beige", // beige | rosado | azul | negro | marron
+    category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-006-principal.jpg",
@@ -94,8 +94,8 @@ export const products = [
     name: "Mochila Artesanal En Mostacilla",
     description: "Mochila artesanal en mostacilla con un diseño geométrico que combina tonos beige, negro y cobrizo.",
     price: 320000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "", // beige | rosado | azul | negro | marron
+    category: "mostacilla", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "marron", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-007-principal.jpg",
@@ -108,9 +108,8 @@ export const products = [
     name: "Mochila Artesanal En Mostacilla",
     description: "Mochila artesanal en mostacilla con un diseño geométrico que combina tonos beige, negro y cobrizo.",
     price: 350000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "", // beige | rosado | azul | negro | marron
-    available: true,
+    category: "mostacilla", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | cuero | argollas
+    color: "blanco", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     images: [
       "moc-008-principal.jpg",
       "moc-008-alternativa.jpg",
@@ -122,8 +121,8 @@ export const products = [
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "recamadas", // recamadas | tela | lentejuela | religiosa
-    color: "beige", // beige | rosado | azul | negro | marron
+    category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "marron", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-009-principal.jpg",
@@ -136,8 +135,8 @@ export const products = [
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "recamadas", // recamadas | tela | lentejuela | religiosa
-    color: "beige", // beige | rosado | azul | negro | marron
+    category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-010-principal.jpg",
@@ -150,8 +149,8 @@ export const products = [
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "recamadas", // recamadas | tela | lentejuela | religiosa
-    color: "", // beige | rosado | azul | negro | marron
+    category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "amarillo", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-011-principal.jpg",
@@ -164,8 +163,8 @@ export const products = [
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "recamadas", // recamadas | tela | lentejuela | religiosa
-    color: "", // beige | rosado | azul | negro | marron
+    category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-012-principal.jpg",
@@ -178,8 +177,8 @@ export const products = [
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "recamadas", // recamadas | tela | lentejuela | religiosa
-    color: "", // beige | rosado | azul | negro | marron
+    category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "amarillo", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-013-principal.jpg",
@@ -191,8 +190,8 @@ export const products = [
     name: "Mochila Con Argollas",
     description: "Mochila artesanal en tono gris topo, con tejido detallado y argollas decorativas que aportan un estilo moderno y original.",
     price: 160000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "marron", // beige | rosado | azul | negro | marron
+    category: "argollas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "plateado", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-014-principal.png",
@@ -205,8 +204,8 @@ export const products = [
     name: "Mochila Con Argollas",
     description: "Mochila artesanal en tono gris topo, con tejido detallado y argollas decorativas que aportan un estilo moderno y original.",
     price: 160000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "", // beige | rosado | azul | negro | marron
+    category: "argollas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
+    color: "verde", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-015-principal.jpg",
@@ -219,8 +218,8 @@ export const products = [
     name: "Mochila Arahuaca Con Cuero",
     description: "Mochila arahuaca con detalles en cuero que combinan tradición artesanal, resistencia y estilo auténtico.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "beige", // recamadas | tela | lentejuela | religiosa
-    color: "beige", // beige | rosado | azul | negro | marron
+    category: "arahuaca", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | cuero | argollas
+    color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-016-alternativa.jpg",
@@ -233,8 +232,8 @@ export const products = [
     name: "Mochila En Mostacilla Mini",
     description: "Mochila mini en mostacilla con diseño geométrico en tonos beige, negro y cobrizo.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "", // beige | rosado | azul | negro | marron
+    category: "mostacilla", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
+    color: "multicolor", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-017-principal.jpg",
@@ -247,8 +246,8 @@ export const products = [
     name: "Mochila En Cuero",
     description: "Mochila artesanal en cuero azul oscuro con detalles marrones y herrajes dorados que aportan un estilo moderno y elegante.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "azul", // beige | rosado | azul | negro | marron
+    category: "cuero", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
+    color: "azul", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-018-principal.jpg",
@@ -262,8 +261,8 @@ export const products = [
     name: "Mochila En Cuero",
     description: "Mochila artesanal en cuero color miel, con bordes tejidos y delicados flecos decorativos que resaltan su estilo natural y elegante.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "marron", // beige | rosado | azul | negro | marron
+    category: "cuero", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
+    color: "miel", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-019-principal.jpg",
@@ -276,8 +275,8 @@ export const products = [
     name: "Mochila Arahuaca Con Cuero",
     description: "Mochila arahuaca con detalles en cuero que combinan tradición artesanal, resistencia y estilo auténtico.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "negro", // beige | rosado | azul | negro | marron
+    category: "arahuaca", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
+    color: "negro", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-020-principal.jpg",
@@ -292,8 +291,8 @@ export const products = [
     name: "Mochila En Mostacilla Mini",
     description: "Mochila mini en mostacilla con diseño geométrico en tonos beige, negro y cobrizo.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "", // beige | rosado | azul | negro | marron
+    category: "mostacilla", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
+    color: "blanco", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-021-principal.jpg",
@@ -306,8 +305,8 @@ export const products = [
     name: "Mochila Arahuaca Con Cuero",
     description: "Mochila arahuaca con detalles en cuero que combinan tradición artesanal, resistencia y estilo auténtico.",
     price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
-    category: "", // recamadas | tela | lentejuela | religiosa
-    color: "", // beige | rosado | azul | negro | marron
+    category: "arahuaca", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
+    color: "multicolor", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
     images: [
       "moc-022-principal.jpg",

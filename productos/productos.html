@@ -110,24 +110,52 @@
             <h2>Categorías</h2>
            
             <button class="category-filter active" type="button" data-category="all">
-              <i class="fa-solid fa-bag-shopping"></i><span class="category-filter__label">Todas las mochilas</span><span class="filter-count" data-count-category="all">22</span>
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span class="category-filter__label">Todas las mochilas</span>
+              <span class="filter-count" data-count-category="all">22</span>
             </button>
            
             <button class="category-filter" type="button" data-category="recamadas">
-              <i class="fa-solid fa-bag-shopping"></i><span class="category-filter__label">Recamadas</span><span class="filter-count" data-count-category="recamadas">—</span>
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span class="category-filter__label">Recamadas</span>
+              <span class="filter-count" data-count-category="recamadas">—</span>
             </button>
-            
-            <button class="category-filter" type="button" data-category="tela">
-              <i class="fa-solid fa-bag-shopping"></i><span class="category-filter__label">En tela</span><span class="filter-count" data-count-category="tela">—</span>
-            </button>
-            
+                                    
             <button class="category-filter" type="button" data-category="lentejuela">
-              <i class="fa-solid fa-bag-shopping"></i><span class="category-filter__label">En lentejuela</span><span class="filter-count" data-count-category="lentejuela">—</span>
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span class="category-filter__label">En lentejuela</span>
+              <span class="filter-count" data-count-category="lentejuela">—</span>
             </button>
             
             <button class="category-filter" type="button" data-category="religiosa">
-              <i class="fa-solid fa-cross"></i><span class="category-filter__label">Inspiración religiosa</span><span class="filter-count" data-count-category="religiosa">—</span>
+              <i class="fa-solid fa-cross"></i>
+              <span class="category-filter__label">Inspiración religiosa</span>
+              <span class="filter-count" data-count-category="religiosa">—</span>
             </button>
+
+            <button class="category-filter" type="button" data-category="mostacilla">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span class="category-filter__label">En mostacilla</span>
+              <span class="filter-count" data-count-category="mostacilla">—</span>
+            </button>
+
+            <button class="category-filter" type="button" data-category="argollas">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span class="category-filter__label">Con argollas</span>
+              <span class="filter-count" data-count-category="argollas">—</span>
+            </button>
+
+            <button class="category-filter" type="button" data-category="arahuaca">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span class="category-filter__label">Arahuacas</span>
+              <span class="filter-count" data-count-category="arahuaca">—</span>
+            </button>
+
+            <button class="category-filter" type="button" data-category="cuero">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span class="category-filter__label">En cuero</span>
+              <span class="filter-count" data-count-category="cuero">—</span>
+            </button>            
           </section>
 
           <!-- Filtros adicionales -->
@@ -162,11 +190,96 @@
               </div>
 
               <div class="color-options">
-                <button class="color-option color-option--beige" type="button" data-color="beige" aria-label="Filtrar color beige" aria-pressed="false"></button>
-                <button class="color-option color-option--pink" type="button" data-color="rosado" aria-label="Filtrar color rosado" aria-pressed="false"></button>
-                <button class="color-option color-option--blue" type="button" data-color="azul" aria-label="Filtrar color azul" aria-pressed="false"></button>
-                <button class="color-option color-option--black" type="button" data-color="negro" aria-label="Filtrar color negro" aria-pressed="false"></button>
-                <button class="color-option color-option--brown" type="button" data-color="marron" aria-label="Filtrar color marrón" aria-pressed="false"></button>
+                <button 
+                    class="color-option color-option--beige" 
+                    type="button" 
+                    data-color="beige" 
+                    aria-label="Filtrar color beige" 
+                    aria-pressed="false"
+                ></button>
+
+                <button class="color-option color-option--pink" 
+                    type="button" 
+                    data-color="rosado" 
+                    aria-label="Filtrar color rosado" 
+                    aria-pressed="false"
+                ></button>
+
+                <button class="color-option color-option--blue" 
+                    type="button" 
+                    data-color="azul" 
+                    aria-label="Filtrar color azul" 
+                    aria-pressed="false"
+                ></button>
+
+                <button class="color-option color-option--black" 
+                    type="button" 
+                    data-color="negro" 
+                    aria-label="Filtrar color negro" 
+                    aria-pressed="false"
+                ></button>
+
+                <button class="color-option color-option--green" 
+                    type="button" 
+                    data-color="verde" 
+                    aria-label="Filtrar color negro" 
+                    aria-pressed="false"
+                ></button>
+
+                <button class="color-option color-option--brown" 
+                    type="button" 
+                    data-color="marron" 
+                    aria-label="Filtrar color marrón" 
+                    aria-pressed="false"
+                ></button>
+                
+                <button
+                  class="color-option color-option--silver"
+                  type="button"
+                  data-color="plateado"
+                  aria-label="Filtrar color gris"
+                  aria-pressed="false"
+                ></button>
+
+                <button
+                  class="color-option color-option--copper"
+                  type="button"
+                  data-color="cobrizo"
+                  aria-label="Filtrar color cobrizo"
+                  aria-pressed="false"
+                ></button>
+
+                <button
+                  class="color-option color-option--honey"
+                  type="button"
+                  data-color="miel"
+                  aria-label="Filtrar color miel"
+                  aria-pressed="false"
+                ></button>
+
+                <button
+                  class="color-option color-option--multicolor"
+                  type="button"
+                  data-color="multicolor"
+                  aria-label="Filtrar color multicolor"
+                  aria-pressed="false"
+                ></button>
+
+                <button
+                  class="color-option color-option--yellow"
+                  type="button"
+                  data-color="amarillo"
+                  aria-label="Filtrar color blanco"
+                  aria-pressed="false"
+                ></button>
+
+                <button
+                  class="color-option color-option--white"
+                  type="button"
+                  data-color="blanco"
+                  aria-label="Filtrar color blanco"
+                  aria-pressed="false"
+                ></button>
               </div>
             </div>
 
@@ -248,7 +361,10 @@
        ========================================================= -->
   <section class="products-cta">
     <div class="container products-cta__content">
-      <span class="products-cta__ornament" aria-hidden="true">✧</span>
+      
+    
+    <i class="fa-brands fa-pagelines products-cta__ornament" aria-hidden="true"></i>
+  
 
       <h2>Lleva contigo una historia hecha a mano</h2>
 

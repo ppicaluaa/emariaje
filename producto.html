@@ -37,26 +37,90 @@
   <!-- ================================================
        ENCABEZADO DE LA PÁGINA
        ================================================ -->
-  <header class="detail-header">
-    <div class="container detail-header__content">
+ <header class="header catalog-header">
+  <div class="container header__inner">
 
-      <!-- Enlace para regresar al catálogo -->
+    <!-- Logo y nombre de la marca -->
+    <a href="./index.html" class="logo" aria-label="EMARIAJES, inicio">
+      <div class="logo__symbol">
+        <img
+          src="./images/brand/logo-emariajes.png"
+          alt="Logo de EMARIAJES"
+        >
+      </div>
+
+      <div class="logo__text">
+        <strong>EMARIAJES</strong>
+        <small>ARTESANÍA &amp; DISEÑO</small>
+      </div>
+    </a>
+
+    <!-- Menú de navegación -->
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="./index.html" class="nav__link">Inicio</a>
+
       <a
-        class="detail-header__back"
         href="./productos/productos.html"
-      >
-        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-        Volver al catálogo
+        class="nav__link active"
+        aria-current="page"
+      >Productos</a>
+
+      <a href="./index.html#historia" class="nav__link">
+        Nuestra historia
       </a>
 
-      <!-- Identidad de la marca -->
-      <a class="detail-header__brand" href="./index.html">
-        EMARIAJES
-        <span>ARTESANÍA &amp; DISEÑO</span>
+      <a href="./index.html#proceso" class="nav__link">
+        Proceso
       </a>
+
+      <a href="./index.html#contacto" class="nav__link">
+        Contacto
+      </a>
+    </nav>
+
+    <!-- Búsqueda y carrito -->
+    <div class="header__actions">
+
+      <button
+        class="header__icon"
+        id="searchToggle"
+        type="button"
+        aria-label="Buscar productos"
+        aria-expanded="false"
+        aria-controls="detailSearchForm"
+      >
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      </button>
+
+      <button
+        class="header__cart"
+        type="button"
+        aria-label="Carrito de compras"
+        aria-controls="cartDrawer"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+        <span class="cart__count" id="cartCount">0</span>
+      </button>
 
     </div>
-  </header>
+  </div>
+
+  <!-- Formulario desplegable de búsqueda -->
+  <form class="catalog-search" id="detailSearchForm" hidden role="search">
+    <label for="detailSearchInput">Buscar mochilas</label>
+
+    <input
+      id="detailSearchInput"
+      type="search"
+      placeholder="Escribe el nombre de una mochila"
+    >
+
+    <button type="submit" aria-label="Buscar">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+    </button>
+  </form>
+</header>
 
 
   <!-- ================================================
@@ -169,7 +233,6 @@
                 <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
                 Agregar al carrito
            </button>
-
 
           <!-- Enlace para volver al catálogo -->
           <a

@@ -1,0 +1,125 @@
+
+/* ============================================================
+   EMARIAJES - NOTIFICACIONES DE LA TIENDA
+   ============================================================ */
+
+.notification-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(410px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.notification {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 28px;
+  align-items: start;
+  gap: 12px;
+  padding: 18px;
+  background: #fffaf6;
+  border: 1px solid #e8d6c8;
+  border-left: 4px solid #648365;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgb(62 48 43 / 14%);
+  color: #49352c;
+  opacity: 0;
+  transform: translateX(24px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: auto;
+}
+
+.notification.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.notification--error {
+  border-left-color: #b64b3b;
+}
+
+.notification__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e5efe5;
+  color: #47764d;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.notification--error .notification__icon {
+  background: #f8e7e3;
+  color: #a63f31;
+}
+
+.notification__content {
+  min-width: 0;
+}
+
+.notification__title {
+  margin: 0 0 5px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.notification__message {
+  margin: 0;
+  color: #806e63;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.notification__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #806e63;
+  font-size: 21px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.notification__close:hover {
+  background: #f0e5dc;
+}
+
+.notification__close:focus-visible {
+  outline: 2px solid #744936;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .notification-container {
+    top: 12px;
+    right: 12px;
+    width: calc(100vw - 24px);
+  }
+
+  .notification {
+    padding: 14px;
+    gap: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notification {
+    transition: none;
+  }
+}
