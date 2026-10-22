@@ -297,5 +297,13 @@ grid.addEventListener("click", (event) => {
   }
 });
 
+const filtersToggle = document.querySelector("#filtersToggle");
+const sidebar = document.querySelector("#productsSidebar");
+
+filtersToggle?.addEventListener("click", () => {
+  const isOpen = sidebar.classList.toggle("is-open");
+  filtersToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
 render();
 initCartUI();

@@ -512,7 +512,8 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 22px;
+  margin-top: 0;
+  min-height: 50xp;
   padding: 12px 24px;
   border: 1px solid #744936;
   border-radius: 6px;
@@ -526,6 +527,12 @@
     background-color 0.25s ease,
     color 0.25s ease,
     transform 0.25s ease;
+}
+
+.product-detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .product-add-cart:hover {
@@ -695,7 +702,5 @@
 }
 
 @media (max-width: 480px) {
-  .product-add-cart {
-    width: 100%;
-  }
+  .product-detail__actions > * { flex: 1 1 100%; }
 }

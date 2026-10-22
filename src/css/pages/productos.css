@@ -854,6 +854,8 @@
   }
 }
 
+.filters-toggle { display: none; }
+
 /* Pantallas medianas: reorganiza encabezado y filtros. */
 @media (max-width:850px) {
   .catalog-header .header__inner {
@@ -871,9 +873,28 @@
     grid-template-columns: 1fr;
   }
 
+   .filters-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 10px 16px;
+    border: 1px solid var(--color-terracotta, #b9684d);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-terracotta, #b9684d);
+    font: 600 .72rem var(--font-body, "Montserrat", sans-serif);
+    cursor: pointer;
+  }
+
   .products-sidebar {
+    display: none;
     position: static;
   }
+
+  .products-sidebar.is-open { 
+    display: block; 
+  }  
 
   .products-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -892,6 +913,16 @@
     font-size: .7rem;
   }
 
+  .catalog-search {
+    left: 5%;
+    right: 5%;
+    flex-wrap: wrap;
+  }
+  .catalog-search input {
+    flex: 1;
+    min-width: 0;
+  }
+
   .products-hero {
     min-height: 185px;
   }
@@ -908,6 +939,62 @@
     max-width: 350px;
     font-size: .95rem;
   }
+
+  .product-card__body h3 { 
+    font-size: .8rem; 
+  }
+
+  .product-card__body p { 
+    font-size: .7rem; 
+    min-height: 48px; 
+  }
+
+  .product-card__price { 
+    font-size: .85rem; 
+  }
+
+  .product-card__button { 
+    min-height: 40px; 
+    font-size: .7rem; 
+  }
+
+  .product-card__favorite {
+      width: 36px;
+      height: 36px;
+    }
+  
+  .color-option {
+      width: 30px;
+      height: 30px;
+    }
+  
+  .pagination button {
+      width: 38px;
+      height: 38px;
+    }
+
+  .products-hero::after {
+    background: linear-gradient(
+    90deg,
+    rgba(242, 229, 220, .96) 0%,
+    rgba(242, 229, 220, .88) 55%,
+    rgba(242, 229, 220, .55) 100%
+  );
+}
+
+.catalog-header .logo__symbol { 
+  width: 38px; 
+  height: 38px; 
+}
+
+.catalog-header .logo__text strong { 
+  font-size: 1.55rem; 
+}
+
+.catalog-header .logo__text small { 
+  font-size: .4rem; 
+  letter-spacing: .14em; 
+}
 
   .products-toolbar {
     align-items: flex-start;

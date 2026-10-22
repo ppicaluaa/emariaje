@@ -100,10 +100,15 @@
         <strong>Mochilas</strong>
       </nav>
 
+      <button class="filters-toggle" id="filtersToggle" type="button"
+        aria-expanded="false" aria-controls="productsSidebar">
+        <i class="fa-solid fa-sliders"></i> Filtros
+      </button>
+
       <div class="products-layout">
 
         <!-- Panel lateral de filtros -->
-        <aside class="products-sidebar" aria-label="Filtros de productos">
+        <aside class="products-sidebar" id="productsSidebar" aria-label="Filtros de productos">
 
           <!-- Filtro por categoría -->
           <section class="filter-block">
