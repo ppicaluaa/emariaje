@@ -9,7 +9,7 @@ export const products = [
     id: "moc-001",
     name: "Mochila Mariana",
     description: "Una pieza artesanal inspirada en la devoción mariana, donde la fe y la tradición se unen en un diseño lleno de significado.",
-    price: 160000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 165000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "religiosa", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "blanco", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -23,7 +23,7 @@ export const products = [
     id: "moc-002",
     name: "Mochila Recamada En Perlas",
     description: "Diseño artesanal recamado con perlas y detalles bordados que hacen de cada pieza una creación única.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "rosado", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -37,7 +37,7 @@ export const products = [
     id: "moc-003",
     name: "Mochila En Tela Lentejuela",
     description: "Diseño artesanal en tela con lentejuelas, perfecto para destacar con elegancia y personalidad.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "lentejuela", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -51,7 +51,7 @@ export const products = [
     id: "moc-004",
     name: "Mochila Recamada En Perla",
     description: "Diseño artesanal recamado con perlas y delicados detalles que realzan su elegancia.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -65,7 +65,7 @@ export const products = [
     id: "moc-005",
     name: "Mochila Recamada En Perla",
     description: "Diseño artesanal recamado con perlas y delicados detalles que realzan su elegancia.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "marron", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -79,7 +79,7 @@ export const products = [
     id: "moc-006",
     name: "Mochila Recamada En Perla",
     description: "Diseño artesanal recamado con perlas y delicados detalles que realzan su elegancia.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -120,7 +120,7 @@ export const products = [
     id: "moc-009",
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "marron", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -134,7 +134,7 @@ export const products = [
     id: "moc-010",
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -148,7 +148,7 @@ export const products = [
     id: "moc-011",
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "amarillo", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -162,7 +162,7 @@ export const products = [
     id: "moc-012",
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -176,7 +176,7 @@ export const products = [
     id: "moc-013",
     name: "Mochila Recamada Con Flores y Perlas",
     description: "Mochila artesanal con delicadas flores recamadas y perlas que aportan elegancia y encanto.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "recamadas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "amarillo", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -189,7 +189,7 @@ export const products = [
     id: "moc-014",
     name: "Mochila Con Argollas",
     description: "Mochila artesanal en tono gris topo, con tejido detallado y argollas decorativas que aportan un estilo moderno y original.",
-    price: 160000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 165000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "argollas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "plateado", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -203,7 +203,7 @@ export const products = [
     id: "moc-015",
     name: "Mochila Con Argollas",
     description: "Mochila artesanal en tono gris topo, con tejido detallado y argollas decorativas que aportan un estilo moderno y original.",
-    price: 160000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 165000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "argollas", // recamadas | tela | lentejuela | religiosa | arahuacas | mostacilla | cuero | argollas
     color: "verde", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -217,7 +217,7 @@ export const products = [
     id: "moc-016",
     name: "Mochila Arahuaca Con Cuero",
     description: "Mochila arahuaca con detalles en cuero que combinan tradición artesanal, resistencia y estilo auténtico.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "arahuaca", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | cuero | argollas
     color: "beige", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -231,7 +231,7 @@ export const products = [
     id: "moc-017",
     name: "Mochila En Mostacilla Mini",
     description: "Mochila mini en mostacilla con diseño geométrico en tonos beige, negro y cobrizo.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "mostacilla", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
     color: "multicolor", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -245,7 +245,7 @@ export const products = [
     id: "moc-018",
     name: "Mochila En Cuero",
     description: "Mochila artesanal en cuero azul oscuro con detalles marrones y herrajes dorados que aportan un estilo moderno y elegante.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "cuero", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
     color: "azul", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -260,7 +260,7 @@ export const products = [
     id: "moc-019",
     name: "Mochila En Cuero",
     description: "Mochila artesanal en cuero color miel, con bordes tejidos y delicados flecos decorativos que resaltan su estilo natural y elegante.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "cuero", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
     color: "miel", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -274,7 +274,7 @@ export const products = [
     id: "moc-020",
     name: "Mochila Arahuaca Con Cuero",
     description: "Mochila arahuaca con detalles en cuero que combinan tradición artesanal, resistencia y estilo auténtico.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "arahuaca", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
     color: "negro", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -290,7 +290,7 @@ export const products = [
     id: "moc-021",
     name: "Mochila En Mostacilla Mini",
     description: "Mochila mini en mostacilla con diseño geométrico en tonos beige, negro y cobrizo.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "mostacilla", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
     color: "blanco", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
@@ -304,7 +304,7 @@ export const products = [
     id: "moc-022",
     name: "Mochila Arahuaca Con Cuero",
     description: "Mochila arahuaca con detalles en cuero que combinan tradición artesanal, resistencia y estilo auténtico.",
-    price: 220000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
+    price: 225000, // Escribe el precio en pesos colombianos, por ejemplo: 250000
     category: "arahuaca", // recamadas | tela | lentejuela | religiosa | arahuaca | mostacilla | argollas | cuero
     color: "multicolor", // beige | rosado | azul | negro | marron | blanco | gris | verde | amarillo | plateado | multicolor | miel
     available: true,
